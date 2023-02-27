@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DoorOpen.wav-b060838f5f384e4b187666f700f2cbbc.sample"
+
+[deps]
+
+source_file="res://Sound/SFX/Environment/Doors/DoorOpen.wav"
+dest_files=[ "res://.import/DoorOpen.wav-b060838f5f384e4b187666f700f2cbbc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

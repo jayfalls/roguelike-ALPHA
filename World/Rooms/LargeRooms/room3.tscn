@@ -1,0 +1,367 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://World/Rooms/DefaultRoom.tscn" type="PackedScene" id=1]
+[ext_resource path="res://World/Enviroment/Lighting/AmbientLight.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World/Enviroment/Props/Traps/SmallSpikes.tscn" type="PackedScene" id=3]
+[ext_resource path="res://World/Enviroment/Props/Traps/BigSpikes.tscn" type="PackedScene" id=4]
+[ext_resource path="res://World/Enviroment/Props/Traps/FlameThrower.tscn" type="PackedScene" id=5]
+[ext_resource path="res://World/Enviroment/Props/LavaFountain.tscn" type="PackedScene" id=6]
+[ext_resource path="res://World/Enviroment/Props/Flag.tscn" type="PackedScene" id=7]
+[ext_resource path="res://World/Enviroment/Props/Pillar.tscn" type="PackedScene" id=8]
+[ext_resource path="res://World/Enviroment/Props/Interactive/Chest1.tscn" type="PackedScene" id=9]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 404, 247, 396, 247, 132, 243, 188, 243, 388, 171, 412, 147, 428, 139, 428, 283, 420, 267, 148, 83, 156, 43, 156, 115, 148, 107, 148, 59, 424, 19, 428, 19, 428, 115, 412, 107, 404, 83, 404, 59, 412, 31, 172, 131, 188, 155, 172, 155, 148, 131, 388, 147, 392, 131, 380, 267, 172, 247, 300, 203, 300, 243, 276, 227, 276, 155, 283, 163, 384, 283, 180, 283, 188, 267, 148, 267, 156, 283, 108, 283, 116, 267, 76, 267, 84, 283, 44, 283, 52, 267, 12, 267, 20, 283, 4, 283, 4, 139, 28, 251, 20, 147, 20, 107, 4, 115, 4, 19, 8, 19, 20, 31, 156, 171, 132, 171, 132, 147, 276, 99, 276, 43, 299, 91, 299, 115, 283, 123, 404, 31, 388, 59, 388, 43, 416, 283, 388, 203, 116, 19, 115, -1, 123, -1, 124, 19, 28, 31, 28, 59, 164, 19, 164, 7, 172, 7, 172, 19, 212, 19, 212, -17, 220, -17, 220, 19, 260, 19, 260, 7, 268, 7, 268, 19, 307, 19, 307, -1, 315, -1, 316, 19, 392, 19, 364, 43, 300, 43, 300, 67, 324, 67, 324, 83, 363, 147, 363, 139, 323, 139, 323, 131, 363, 131, 392, 123, 363, 115, 387, 115, 387, 91, 260, 43, 260, 27, 188, 27, 188, 43, 132, 43, 132, 59, 44, 43, 40, 19, 44, 59, 28, 83, 172, 115, 188, 131, 132, 107, 132, 91, 44, 91, 44, 115, 36, 123, 68, 115, 68, 131, 36, 131, 108, 147, 108, 139, 68, 139, 68, 147, 44, 147, 44, 171, 68, 171, 68, 179, 108, 179, 108, 171, 156, 195, 156, 203, 172, 171, 180, 195, 180, 179, 196, 179, 196, 203, 196, 163, 212, 163, 212, 123, 196, 123, 196, 107, 220, 107, 180, 107, 180, 67, 196, 67, 252, 99, 196, 51, 252, 51, 323, 115, 323, 123, 300, 163, 300, 171, 324, 171, 324, 179, 364, 179, 364, 171, 364, 203, 364, 187, 324, 187, 324, 203, 260, 155, 260, 139, 244, 139, 244, 107, 220, 147, 236, 147, 236, 163, 196, 219, 252, 163, 252, 219, 156, 227, 188, 227, 260, 243, 260, 227, 340, 243, 340, 227, 348, 227, 348, 243, 132, 203, 108, 203, 108, 187, 68, 187, 68, 203, 44, 203, 84, 243, 84, 227, 92, 227, 92, 243, 36, 251, 388, 243, 164, 247, 100, 247, 92, 247, 44, 243 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7, 8 ), PoolIntArray( 9, 10, 11, 12 ), PoolIntArray( 10, 9, 13 ), PoolIntArray( 14, 15, 16, 17, 18, 19, 20 ), PoolIntArray( 21, 22, 23, 24, 11 ), PoolIntArray( 5, 4, 25, 26 ), PoolIntArray( 2, 1, 27, 28 ), PoolIntArray( 29, 30, 31, 32, 33 ), PoolIntArray( 34, 35, 36, 27 ), PoolIntArray( 37, 38, 39, 40, 2 ), PoolIntArray( 41, 42, 43, 44 ), PoolIntArray( 45, 46, 47 ), PoolIntArray( 45, 47, 48 ), PoolIntArray( 49, 45, 48, 50 ), PoolIntArray( 51, 52, 53, 54, 55 ), PoolIntArray( 24, 23, 56, 57, 58 ), PoolIntArray( 59, 60, 61, 62, 63 ), PoolIntArray( 64, 20, 19, 65, 66 ), PoolIntArray( 7, 67, 8 ), PoolIntArray( 4, 8, 0, 68 ), PoolIntArray( 69, 70, 71, 72 ), PoolIntArray( 51, 55, 73, 74 ), PoolIntArray( 75, 76, 77, 78 ), PoolIntArray( 79, 80, 81, 82 ), PoolIntArray( 83, 84, 85, 86 ), PoolIntArray( 87, 88, 89, 90 ), PoolIntArray( 90, 91, 64, 66, 92 ), PoolIntArray( 90, 92, 93, 87 ), PoolIntArray( 86, 87, 93, 60 ), PoolIntArray( 94, 95, 96, 61 ), PoolIntArray( 25, 97, 98, 26 ), PoolIntArray( 98, 99, 100, 101 ), PoolIntArray( 26, 98, 101, 102 ), PoolIntArray( 102, 101, 103, 104 ), PoolIntArray( 17, 102, 104, 105, 18 ), PoolIntArray( 96, 18, 105, 61 ), PoolIntArray( 94, 61, 60, 93 ), PoolIntArray( 86, 60, 106, 107 ), PoolIntArray( 83, 86, 107 ), PoolIntArray( 82, 83, 107, 108 ), PoolIntArray( 79, 82, 108 ), PoolIntArray( 78, 79, 108 ), PoolIntArray( 78, 108, 109, 10, 75 ), PoolIntArray( 110, 72, 75, 10, 13 ), PoolIntArray( 13, 111, 110 ), PoolIntArray( 72, 110, 112, 69 ), PoolIntArray( 113, 69, 112, 73 ), PoolIntArray( 112, 114, 74, 73 ), PoolIntArray( 51, 74, 115 ), PoolIntArray( 11, 116, 21 ), PoolIntArray( 21, 117, 22 ), PoolIntArray( 11, 24, 12 ), PoolIntArray( 9, 12, 118, 119 ), PoolIntArray( 115, 9, 119, 120 ), PoolIntArray( 51, 115, 120, 121, 122 ), PoolIntArray( 122, 121, 123, 124, 125 ), PoolIntArray( 58, 126, 127, 24 ), PoolIntArray( 128, 129, 130, 125 ), PoolIntArray( 131, 132, 133 ), PoolIntArray( 134, 135, 57, 136, 137 ), PoolIntArray( 23, 138, 56 ), PoolIntArray( 57, 56, 136 ), PoolIntArray( 139, 140, 141, 142 ), PoolIntArray( 141, 143, 144 ), PoolIntArray( 145, 146, 147, 148 ), PoolIntArray( 147, 149, 150, 151, 152 ), PoolIntArray( 151, 153, 154, 152 ), PoolIntArray( 62, 155, 156, 63 ), PoolIntArray( 33, 157, 158 ), PoolIntArray( 158, 159, 160 ), PoolIntArray( 161, 162, 4 ), PoolIntArray( 68, 163, 164, 4 ), PoolIntArray( 158, 165, 166, 29, 33 ), PoolIntArray( 32, 167, 168, 63 ), PoolIntArray( 63, 168, 169, 170, 152, 59 ), PoolIntArray( 171, 172, 173, 174, 142, 144 ), PoolIntArray( 173, 175, 176, 174 ), PoolIntArray( 177, 178, 3, 2 ), PoolIntArray( 179, 180, 31, 30 ), PoolIntArray( 181, 182, 183, 184 ), PoolIntArray( 185, 186, 187 ), PoolIntArray( 188, 189, 190, 131 ), PoolIntArray( 191, 192, 193, 194 ), PoolIntArray( 195, 49, 50, 125, 130, 131 ), PoolIntArray( 0, 196, 68 ), PoolIntArray( 161, 4, 164 ), PoolIntArray( 160, 161, 164, 165 ), PoolIntArray( 158, 160, 165 ), PoolIntArray( 63, 33, 32 ), PoolIntArray( 124, 24, 127, 128 ), PoolIntArray( 125, 124, 128 ), PoolIntArray( 27, 36, 28 ), PoolIntArray( 2, 28, 197 ), PoolIntArray( 2, 197, 37 ), PoolIntArray( 2, 40, 198 ), PoolIntArray( 194, 2, 198, 199 ), PoolIntArray( 191, 194, 199, 41 ), PoolIntArray( 200, 191, 41, 44, 195 ), PoolIntArray( 152, 170, 148 ), PoolIntArray( 147, 152, 148 ), PoolIntArray( 145, 148, 171, 144 ), PoolIntArray( 141, 144, 142 ), PoolIntArray( 139, 142, 137, 136 ), PoolIntArray( 190, 200, 195 ), PoolIntArray( 190, 195, 131 ), PoolIntArray( 188, 131, 133 ), PoolIntArray( 188, 133, 134, 187 ), PoolIntArray( 187, 134, 137, 185 ), PoolIntArray( 185, 137, 177, 2 ), PoolIntArray( 0, 3, 179 ), PoolIntArray( 0, 179, 30 ), PoolIntArray( 0, 30, 181 ), PoolIntArray( 0, 181, 184 ), PoolIntArray( 0, 184, 196 ) ]
+outlines = [ PoolVector2Array( 384, 283, 380, 267, 396, 247, 404, 247, 420, 267, 416, 283, 428, 283, 428, 139, 412, 147, 392, 131, 392, 123, 412, 107, 428, 115, 428, 19, 424, 19, 412, 31, 404, 31, 392, 19, 316, 19, 315, -1, 307, -1, 307, 19, 268, 19, 268, 7, 260, 7, 260, 19, 220, 19, 220, -17, 212, -17, 212, 19, 172, 19, 172, 7, 164, 7, 164, 19, 124, 19, 123, -1, 115, -1, 116, 19, 40, 19, 28, 31, 20, 31, 8, 19, 4, 19, 4, 115, 20, 107, 36, 123, 36, 131, 20, 147, 4, 139, 4, 283, 20, 283, 12, 267, 28, 251, 36, 251, 52, 267, 44, 283, 84, 283, 76, 267, 92, 247, 100, 247, 116, 267, 108, 283, 156, 283, 148, 267, 164, 247, 172, 247, 188, 267, 180, 283 ), PoolVector2Array( 244, 107, 244, 139, 260, 139, 260, 155, 276, 155, 276, 227, 260, 227, 260, 243, 188, 243, 188, 227, 156, 227, 156, 203, 196, 203, 196, 219, 252, 219, 252, 163, 236, 163, 236, 147, 220, 147, 220, 107 ), PoolVector2Array( 156, 195, 180, 195, 180, 179, 196, 179, 196, 163, 212, 163, 212, 123, 196, 123, 196, 107, 180, 107, 180, 67, 196, 67, 196, 51, 252, 51, 252, 99, 276, 99, 276, 43, 260, 43, 260, 27, 188, 27, 188, 43, 156, 43, 156, 115, 172, 115, 172, 131, 188, 131, 188, 155, 172, 155, 172, 171, 156, 171 ), PoolVector2Array( 28, 83, 148, 83, 148, 59, 132, 59, 132, 43, 44, 43, 44, 59, 28, 59 ), PoolVector2Array( 148, 131, 148, 107, 132, 107, 132, 91, 44, 91, 44, 115, 68, 115, 68, 131 ), PoolVector2Array( 68, 179, 108, 179, 108, 171, 132, 171, 132, 147, 108, 147, 108, 139, 68, 139, 68, 147, 44, 147, 44, 171, 68, 171 ), PoolVector2Array( 44, 203, 68, 203, 68, 187, 108, 187, 108, 203, 132, 203, 132, 243, 92, 243, 92, 227, 84, 227, 84, 243, 44, 243 ), PoolVector2Array( 300, 243, 340, 243, 340, 227, 348, 227, 348, 243, 388, 243, 388, 203, 364, 203, 364, 187, 324, 187, 324, 203, 300, 203 ), PoolVector2Array( 324, 171, 324, 179, 364, 179, 364, 171, 388, 171, 388, 147, 363, 147, 363, 139, 323, 139, 323, 131, 363, 131, 363, 115, 387, 115, 387, 91, 299, 91, 299, 115, 323, 115, 323, 123, 283, 123, 283, 163, 300, 163, 300, 171 ), PoolVector2Array( 404, 83, 404, 59, 388, 59, 388, 43, 364, 43, 300, 43, 300, 67, 324, 67, 324, 83 ) ]
+
+[node name="DefaultRoom" instance=ExtResource( 1 )]
+
+[node name="PlayerStart" parent="RoomProperties" index="0"]
+position = Vector2( 352, 392 )
+
+[node name="NavigationController" parent="." index="2"]
+position = Vector2( 0, 18 )
+
+[node name="EntranceCollision" parent="NavigationController" index="0"]
+position = Vector2( 357, 431 )
+
+[node name="Floor" parent="NavigationController" index="1"]
+position = Vector2( 5, 11 )
+tile_data = PoolIntArray( -262144, 0, 0, -196608, 0, 0, -131072, 0, 0, 131072, 0, 0, 131074, 0, 3, 131075, 0, 3, 131076, 0, 3, 131077, 0, 3, 131078, 0, 3, 131079, 0, 3, 131080, 0, 3, 131081, 0, 3, 131082, 0, 3, 131083, 0, 3, 131084, 0, 3, 131085, 0, 3, 131086, 0, 3, 131087, 0, 3, 131088, 0, 3, 131089, 0, 3, 131090, 0, 3, 131091, 0, 3, 131092, 0, 3, 131093, 0, 3, 131094, 0, 3, 131095, 0, 3, 131096, 0, 3, 196608, 0, 0, 196609, 0, 3, 196610, 0, 3, 196611, 0, 3, 196612, 0, 3, 196613, 0, 3, 196614, 0, 3, 196615, 0, 3, 196616, 0, 3, 196617, 0, 3, 196618, 0, 3, 196619, 0, 2, 196620, 0, 2, 196621, 0, 2, 196622, 0, 2, 196623, 0, 2, 196624, 0, 2, 196625, 0, 3, 196626, 0, 3, 196627, 0, 3, 196628, 0, 3, 196629, 0, 3, 196630, 0, 3, 196631, 0, 3, 196632, 0, 3, 196633, 0, 3, 262144, 0, 3, 262145, 0, 3, 262146, 0, 3, 262147, 0, 3, 262148, 0, 3, 262149, 0, 3, 262150, 0, 3, 262151, 0, 3, 262152, 0, 3, 262153, 0, 2, 262154, 0, 2, 262155, 0, 2, 262156, 1, 458760, 262157, 1, 458760, 262158, 1, 458760, 262159, 1, 458760, 262160, 0, 2, 262161, 0, 2, 262162, 0, 3, 262163, 0, 3, 262164, 0, 3, 262165, 0, 3, 262166, 0, 3, 262167, 0, 3, 262168, 0, 3, 262169, 0, 3, 262170, 0, 3, 327680, 0, 3, 327681, 0, 3, 327682, 0, 3, 327683, 0, 3, 327684, 0, 3, 327685, 0, 3, 327686, 0, 3, 327687, 0, 3, 327688, 0, 2, 327689, 0, 2, 327690, 1, 458760, 327691, 1, 458760, 327692, 1, 65544, 327693, 1, 65544, 327694, 1, 65544, 327695, 1, 65544, 327696, 1, 458760, 327697, 0, 2, 327698, 0, 2, 327699, 0, 3, 327700, 0, 3, 327701, 0, 3, 327702, 0, 3, 327703, 0, 3, 327704, 0, 3, 327705, 0, 3, 327706, 0, 3, 393216, 0, 3, 393217, 0, 3, 393218, 0, 3, 393219, 0, 3, 393220, 0, 3, 393221, 0, 3, 393222, 0, 3, 393223, 0, 3, 393224, 0, 2, 393225, 1, 458760, 393226, 1, 65544, 393227, 1, 65544, 393228, 0, 131077, 393229, 0, 131077, 393230, 0, 131077, 393231, 0, 131077, 393232, 1, 65544, 393233, 1, 458760, 393234, 0, 2, 393235, 0, 3, 393236, 0, 3, 393237, 0, 3, 393238, 0, 3, 393239, 0, 3, 393240, 0, 3, 393241, 0, 3, 393242, 0, 3, 458752, 0, 2, 458753, 0, 2, 458754, 0, 2, 458755, 0, 2, 458756, 0, 2, 458757, 0, 2, 458758, 0, 2, 458759, 0, 2, 458760, 0, 2, 458761, 1, 458760, 458762, 1, 65544, 458763, 0, 131077, 458764, 0, 131077, 458765, 0, 131077, 458766, 0, 131077, 458767, 0, 131077, 458768, 1, 65544, 458769, 1, 458760, 458770, 0, 2, 458771, 0, 2, 458772, 0, 2, 458773, 0, 2, 458774, 0, 2, 458775, 0, 2, 458776, 0, 2, 458777, 0, 2, 458778, 0, 2, 524288, 0, 3, 524289, 0, 3, 524290, 0, 3, 524291, 0, 3, 524292, 0, 3, 524293, 0, 3, 524294, 0, 3, 524295, 0, 3, 524296, 0, 2, 524297, 1, 458760, 524298, 1, 65544, 524299, 0, 131077, 524300, 0, 131077, 524301, 0, 131077, 524302, 0, 131077, 524303, 0, 131077, 524304, 1, 65544, 524305, 1, 458760, 524306, 0, 2, 524307, 0, 3, 524308, 0, 3, 524309, 0, 3, 524310, 0, 3, 524311, 0, 3, 524312, 0, 3, 524313, 0, 3, 524314, 0, 3, 589824, 0, 3, 589825, 0, 3, 589826, 0, 3, 589827, 0, 3, 589828, 0, 3, 589829, 0, 3, 589830, 0, 3, 589831, 0, 3, 589832, 0, 2, 589833, 1, 458760, 589834, 1, 65544, 589835, 0, 131077, 589836, 0, 131077, 589837, 0, 131077, 589838, 0, 131077, 589839, 1, 65544, 589840, 0, 131077, 589841, 1, 458760, 589842, 0, 2, 589843, 0, 3, 589844, 0, 3, 589845, 0, 3, 589846, 0, 3, 589847, 0, 3, 589848, 0, 3, 589849, 0, 3, 589850, 0, 3, 655360, 0, 2, 655361, 0, 2, 655362, 0, 2, 655363, 0, 2, 655364, 0, 2, 655365, 0, 2, 655366, 0, 2, 655367, 0, 2, 655368, 0, 2, 655369, 1, 458760, 655370, 0, 131077, 655371, 1, 65544, 655372, 0, 131077, 655373, 0, 131077, 655374, 1, 65544, 655375, 0, 131077, 655376, 0, 131077, 655377, 1, 458760, 655378, 0, 2, 655379, 0, 2, 655380, 0, 2, 655381, 0, 2, 655382, 0, 2, 655383, 0, 2, 655384, 0, 2, 655385, 0, 2, 655386, 0, 2, 720896, 0, 2, 720897, 0, 2, 720898, 0, 2, 720899, 0, 2, 720900, 0, 2, 720901, 0, 2, 720902, 0, 2, 720903, 0, 2, 720904, 0, 2, 720905, 1, 458760, 720906, 0, 131077, 720907, 0, 131077, 720908, 1, 65544, 720909, 0, 131077, 720910, 1, 65544, 720911, 0, 131077, 720912, 0, 131077, 720913, 1, 458760, 720914, 0, 2, 720915, 0, 2, 720916, 0, 2, 720917, 0, 2, 720918, 0, 2, 720919, 0, 2, 720920, 0, 2, 720921, 0, 2, 720922, 0, 2, 786432, 0, 3, 786433, 0, 3, 786434, 0, 3, 786435, 0, 3, 786436, 0, 3, 786437, 0, 3, 786438, 0, 3, 786439, 0, 3, 786440, 0, 2, 786441, 1, 458760, 786442, 0, 131077, 786443, 0, 131077, 786444, 1, 65544, 786445, 0, 131077, 786446, 0, 131077, 786447, 1, 65544, 786448, 0, 131077, 786449, 1, 458760, 786450, 0, 2, 786451, 0, 3, 786452, 0, 3, 786453, 0, 3, 786454, 0, 3, 786455, 0, 3, 786456, 0, 3, 786457, 0, 3, 786458, 0, 3, 851968, 0, 3, 851969, 0, 3, 851970, 0, 3, 851971, 0, 3, 851972, 0, 3, 851973, 0, 3, 851974, 0, 3, 851975, 0, 3, 851976, 0, 2, 851977, 1, 458760, 851978, 0, 131077, 851979, 1, 65544, 851980, 0, 131077, 851981, 0, 131077, 851982, 0, 131077, 851983, 0, 131077, 851984, 1, 65544, 851985, 1, 458760, 851986, 0, 2, 851987, 0, 3, 851988, 0, 3, 851989, 0, 3, 851990, 0, 3, 851991, 0, 3, 851992, 0, 3, 851993, 0, 3, 851994, 0, 3, 917504, 0, 2, 917505, 0, 2, 917506, 0, 2, 917507, 0, 2, 917508, 0, 2, 917509, 0, 2, 917510, 0, 2, 917511, 0, 2, 917512, 0, 2, 917513, 1, 458760, 917514, 1, 65544, 917515, 0, 131077, 917516, 0, 131077, 917517, 0, 131077, 917518, 0, 131077, 917519, 0, 131077, 917520, 1, 65544, 917521, 1, 458760, 917522, 0, 2, 917523, 0, 2, 917524, 0, 2, 917525, 0, 2, 917526, 0, 2, 917527, 0, 2, 917528, 0, 2, 917529, 0, 2, 917530, 0, 2, 983040, 0, 3, 983041, 0, 3, 983042, 0, 3, 983043, 0, 3, 983044, 0, 3, 983045, 0, 3, 983046, 0, 3, 983047, 0, 3, 983048, 0, 2, 983049, 1, 458760, 983050, 1, 65544, 983051, 0, 131077, 983052, 0, 131077, 983053, 0, 131077, 983054, 0, 131077, 983055, 0, 131077, 983056, 1, 65544, 983057, 1, 458760, 983058, 0, 2, 983059, 0, 3, 983060, 0, 3, 983061, 0, 3, 983062, 0, 3, 983063, 0, 3, 983064, 0, 3, 983065, 0, 3, 983066, 0, 3, 1048576, 0, 3, 1048577, 0, 3, 1048578, 0, 3, 1048579, 0, 3, 1048580, 0, 3, 1048581, 0, 3, 1048582, 0, 3, 1048583, 0, 3, 1048584, 0, 2, 1048585, 1, 458760, 1048586, 1, 65544, 1048587, 1, 65544, 1048588, 0, 131077, 1048589, 0, 131077, 1048590, 0, 131077, 1048591, 0, 131077, 1048592, 1, 65544, 1048593, 1, 458760, 1048594, 0, 2, 1048595, 0, 3, 1048596, 0, 3, 1048597, 0, 3, 1048598, 0, 3, 1048599, 0, 3, 1048600, 0, 3, 1048601, 0, 3, 1048602, 0, 3, 1114112, 0, 2, 1114113, 0, 2, 1114114, 0, 2, 1114115, 0, 2, 1114116, 0, 2, 1114117, 0, 2, 1114118, 0, 2, 1114119, 0, 2, 1114120, 0, 2, 1114121, 0, 2, 1114122, 1, 458760, 1114123, 1, 458760, 1114124, 1, 65544, 1114125, 1, 65544, 1114126, 1, 65544, 1114127, 1, 65544, 1114128, 1, 458760, 1114129, 0, 2, 1114130, 0, 2, 1114131, 0, 2, 1114132, 0, 2, 1114133, 0, 2, 1114134, 0, 2, 1114135, 0, 2, 1114136, 0, 2, 1114137, 0, 2, 1114138, 0, 2, 1179648, 0, 3, 1179649, 0, 3, 1179650, 0, 3, 1179651, 0, 3, 1179652, 0, 3, 1179653, 0, 3, 1179654, 0, 3, 1179655, 0, 3, 1179656, 0, 3, 1179657, 0, 2, 1179658, 0, 2, 1179659, 0, 2, 1179660, 1, 458760, 1179661, 1, 458760, 1179662, 1, 458760, 1179663, 1, 458760, 1179664, 0, 2, 1179665, 0, 2, 1179666, 0, 3, 1179667, 0, 3, 1179668, 0, 3, 1179669, 0, 3, 1179670, 0, 3, 1179671, 0, 3, 1179672, 0, 3, 1179673, 0, 3, 1179674, 0, 3, 1245184, 0, 3, 1245185, 0, 3, 1245186, 0, 3, 1245187, 0, 3, 1245188, 0, 3, 1245189, 0, 3, 1245190, 0, 3, 1245191, 0, 3, 1245192, 0, 3, 1245193, 0, 3, 1245194, 0, 3, 1245195, 0, 2, 1245196, 0, 2, 1245197, 0, 2, 1245198, 0, 2, 1245199, 0, 2, 1245200, 0, 2, 1245201, 0, 3, 1245202, 0, 3, 1245203, 0, 3, 1245204, 0, 3, 1245205, 0, 3, 1245206, 0, 3, 1245207, 0, 3, 1245208, 0, 3, 1245209, 0, 3, 1245210, 0, 3, 1310720, 0, 3, 1310721, 0, 3, 1310722, 0, 3, 1310723, 0, 3, 1310724, 0, 3, 1310725, 0, 3, 1310726, 0, 3, 1310727, 0, 3, 1310728, 0, 3, 1310729, 0, 3, 1310730, 0, 3, 1310731, 0, 3, 1310732, 0, 3, 1310733, 0, 3, 1310734, 0, 3, 1310735, 0, 3, 1310736, 0, 3, 1310737, 0, 3, 1310738, 0, 3, 1310739, 0, 3, 1310740, 0, 3, 1310741, 0, 3, 1310742, 0, 3, 1310743, 0, 3, 1310744, 0, 3, 1310745, 0, 3, 1310746, 0, 3, 1376271, 0, 8, 1376272, 0, 6, 1376277, 0, 6, 1376278, 0, 8, 1441807, 0, 7, 1441808, 0, 7, 1441813, 0, 7, 1441814, 0, 7, 1507343, 0, 7, 1507344, 0, 7, 1507349, 0, 2, 1507350, 0, 2, 1572879, 0, 7, 1572880, 0, 7, 1572885, 0, 131080, 1572886, 0, 65540 )
+
+[node name="Walls" parent="NavigationController" index="2"]
+position = Vector2( 5, 59 )
+tile_data = PoolIntArray( -196607, 0, 3, -196606, 0, 131073, -196605, 0, 131073, -196604, 0, 131073, -196603, 0, 131073, -196602, 0, 131073, -196601, 0, 131073, -196600, 0, 131073, -196599, 0, 131073, -196598, 0, 131073, -196597, 0, 131073, -196596, 0, 131073, -196595, 0, 131073, -196594, 0, 131073, -196593, 0, 131073, -196592, 0, 131073, -196591, 0, 131073, -196590, 0, 131073, -196589, 0, 131073, -196588, 0, 131073, -196587, 0, 131073, -196586, 0, 131073, -196585, 0, 131073, -196584, 0, 131073, -196583, 0, 2, -131072, 0, 3, -131071, 0, 196612, -131070, 0, 5, -131069, 0, 5, -131068, 0, 5, -131067, 0, 5, -131066, 0, 5, -131065, 0, 5, -131064, 0, 5, -131063, 0, 5, -131062, 0, 5, -131061, 0, 5, -131060, 0, 5, -131059, 0, 5, -131058, 0, 5, -131057, 0, 5, -131056, 0, 5, -131055, 0, 5, -131054, 0, 5, -131053, 0, 5, -131052, 0, 5, -131051, 0, 5, -131050, 0, 5, -131049, 0, 5, -131048, 0, 5, -131047, 0, 196608, -131046, 0, 2, -1, 0, 3, -65536, 0, 196612, -65535, 0, 5, -65511, 0, 5, -65510, 0, 196608, -65509, 0, 2, 0, 0, 5, 26, 0, 5 )
+
+[node name="SideBottomWalls" parent="NavigationController" index="3"]
+position = Vector2( 5, 59 )
+tile_data = PoolIntArray( 65535, 0, 65539, 27, 0, 65538, 131071, 0, 65539, 65563, 0, 65538, 196607, 0, 65539, 131099, 0, 65538, 262143, 0, 65539, 196635, 0, 65538, 327679, 0, 65539, 262171, 0, 65538, 393215, 0, 65539, 327707, 0, 65538, 458751, 0, 65539, 393243, 0, 65538, 524287, 0, 65539, 458779, 0, 65538, 589823, 0, 65539, 524315, 0, 65538, 655359, 0, 65539, 589851, 0, 65538, 720895, 0, 65539, 655387, 0, 65538, 786431, 0, 65539, 720923, 0, 65538, 851967, 0, 65539, 786459, 0, 65538, 917503, 0, 65539, 851995, 0, 65538, 983039, 0, 65539, 917531, 0, 65538, 1048575, 0, 65539, 983067, 0, 65538, 1114111, 0, 65539, 1048603, 0, 65538, 1179647, 0, 65539, 1114139, 0, 65538, 1245183, 1073741824, 3, 1179648, 1610612736, 131072, 1179649, 1073741824, 131073, 1179650, 1073741824, 131073, 1179651, 1073741824, 131073, 1179652, 1073741824, 131073, 1179653, 1073741824, 131073, 1179654, 1073741824, 131073, 1179655, 1073741824, 131073, 1179656, 1073741824, 131073, 1179657, 1073741824, 131073, 1179658, 1073741824, 131073, 1179659, 1073741824, 131073, 1179660, 1073741824, 131073, 1179661, 1610612736, 131072, 1179662, -2147483648, 196608, 1179665, -1610612736, 196608, 1179666, 1073741824, 131073, 1179667, 1073741824, 131073, 1179668, 1073741824, 196612, 1179671, 1073741824, 196608, 1179672, 1073741824, 131072, 1179673, 1073741824, 131072, 1179674, 1073741824, 131072, 1179675, 1073741824, 2, 1245198, 536870912, 131074, 1245201, 0, 131074, 1245204, -1073741824, 196609, 1245207, -536870912, 196609, 1310740, -2147483648, 131072, 1310743, -536870912, 196609, 1376276, -1073741824, 196609, 1376279, -536870912, 131072, 1441812, -1073741824, 196609, 1441815, -536870912, 131073 )
+
+[node name="Navigation" parent="NavigationController" index="4"]
+position = Vector2( 5, 59 )
+navpoly = SubResource( 1 )
+
+[node name="SpawnLocations" parent="NavigationController" index="5"]
+position = Vector2( 5, 6 )
+tile_data = PoolIntArray( 131085, 0, 0, 196621, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 262161, 0, 0, 262162, 0, 0, 262163, 0, 0, 262164, 0, 0, 262165, 0, 0, 262166, 0, 0, 262167, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 0, 0, 327700, 0, 0, 327701, 0, 0, 327702, 0, 0, 327703, 0, 0, 327704, 0, 0, 327705, 0, 0, 327706, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393225, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393233, 0, 0, 393234, 0, 0, 393240, 0, 0, 393241, 0, 0, 393242, 0, 0, 458752, 0, 0, 458753, 0, 0, 458761, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458777, 0, 0, 458778, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 524305, 0, 0, 524306, 0, 0, 524307, 0, 0, 524308, 0, 0, 524309, 0, 0, 524310, 0, 0, 524311, 0, 0, 524312, 0, 0, 524313, 0, 0, 524314, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589832, 0, 0, 589833, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589848, 0, 0, 589849, 0, 0, 589850, 0, 0, 655362, 0, 0, 655363, 0, 0, 655369, 0, 0, 655370, 0, 0, 655372, 0, 0, 655373, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655383, 0, 0, 655384, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720909, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720918, 0, 0, 720919, 0, 0, 720920, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786445, 0, 0, 786446, 0, 0, 786448, 0, 0, 786449, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 0, 0, 851980, 0, 0, 851981, 0, 0, 851982, 0, 0, 851983, 0, 0, 851985, 0, 0, 851986, 0, 0, 851992, 0, 0, 851993, 0, 0, 851994, 0, 0, 917504, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 917515, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917521, 0, 0, 917522, 0, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0, 983040, 0, 0, 983041, 0, 0, 983042, 0, 0, 983043, 0, 0, 983047, 0, 0, 983048, 0, 0, 983049, 0, 0, 983050, 0, 0, 983051, 0, 0, 983052, 0, 0, 983053, 0, 0, 983054, 0, 0, 983055, 0, 0, 983057, 0, 0, 983058, 0, 0, 983059, 0, 0, 983063, 0, 0, 983064, 0, 0, 983065, 0, 0, 983066, 0, 0, 1048576, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048600, 0, 0, 1048601, 0, 0, 1048602, 0, 0, 1114112, 0, 0, 1114113, 0, 0, 1114114, 0, 0, 1114117, 0, 0, 1114120, 0, 0, 1114121, 0, 0, 1114122, 0, 0, 1114123, 0, 0, 1114128, 0, 0, 1114129, 0, 0, 1114130, 0, 0, 1114133, 0, 0, 1114136, 0, 0, 1114137, 0, 0, 1114138, 0, 0, 1179648, 0, 0, 1179649, 0, 0, 1179650, 0, 0, 1179651, 0, 0, 1179652, 0, 0, 1179653, 0, 0, 1179654, 0, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 0, 0, 1179661, 0, 0, 1179662, 0, 0, 1179663, 0, 0, 1179664, 0, 0, 1179665, 0, 0, 1179666, 0, 0, 1179667, 0, 0, 1179668, 0, 0, 1179669, 0, 0, 1179670, 0, 0, 1179671, 0, 0, 1179672, 0, 0, 1179673, 0, 0, 1179674, 0, 0, 1245184, 0, 0, 1245187, 0, 0, 1245188, 0, 0, 1245191, 0, 0, 1245192, 0, 0, 1245196, 0, 0, 1245197, 0, 0, 1245198, 0, 0, 1245199, 0, 0, 1245200, 0, 0, 1245201, 0, 0, 1245202, 0, 0, 1245203, 0, 0, 1245204, 0, 0, 1245205, 0, 0, 1245206, 0, 0, 1245207, 0, 0, 1245210, 0, 0, 1310720, 0, 0, 1310723, 0, 0, 1310724, 0, 0, 1310727, 0, 0, 1310728, 0, 0, 1310732, 0, 0, 1310733, 0, 0, 1310734, 0, 0, 1310735, 0, 0, 1310736, 0, 0, 1310737, 0, 0, 1310738, 0, 0, 1310739, 0, 0, 1310740, 0, 0, 1310741, 0, 0, 1310742, 0, 0, 1310743, 0, 0, 1310746, 0, 0 )
+
+[node name="Lights" parent="NavigationController" index="6"]
+position = Vector2( 5, -13 )
+
+[node name="Green" parent="NavigationController/Lights" index="0" instance=ExtResource( 2 )]
+position = Vector2( 284, 160 )
+texture_scale = 20.0
+color = Color( 0.196078, 1, 0, 1 )
+
+[node name="Pink" parent="NavigationController/Lights" index="1" instance=ExtResource( 2 )]
+position = Vector2( 85, 160 )
+texture_scale = 4.0
+color = Color( 1, 0, 0.984314, 1 )
+
+[node name="Blue" parent="NavigationController/Lights" index="2" instance=ExtResource( 2 )]
+position = Vector2( 245, 148 )
+texture_scale = 15.0
+color = Color( 0.12549, 0, 1, 1 )
+
+[node name="Red" parent="NavigationController/Lights" index="3" instance=ExtResource( 2 )]
+position = Vector2( 349, 160 )
+texture_scale = 4.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="Yellow" parent="NavigationController/Lights" index="4" instance=ExtResource( 2 )]
+position = Vector2( 229, 252 )
+texture_scale = 3.0
+color = Color( 1, 0.913725, 0, 1 )
+
+[node name="Doors" parent="NavigationController" index="7"]
+position = Vector2( 5, 59 )
+
+[node name="DoorExit" parent="NavigationController/Doors" index="0"]
+position = Vector2( 256, 295 )
+
+[node name="DoorEntrance" parent="NavigationController/Doors" index="1"]
+position = Vector2( 352, 295 )
+
+[node name="Traps" parent="NavigationController" index="8"]
+position = Vector2( 5, 59 )
+
+[node name="Spikes" type="YSort" parent="NavigationController/Traps" index="0"]
+position = Vector2( 0, -46 )
+
+[node name="Right" type="YSort" parent="NavigationController/Traps/Spikes" index="0"]
+
+[node name="BigSpikes" parent="NavigationController/Traps/Spikes/Right" index="0" instance=ExtResource( 4 )]
+position = Vector2( 343, 253 )
+
+[node name="BigSpikes2" parent="NavigationController/Traps/Spikes/Right" index="1" instance=ExtResource( 4 )]
+position = Vector2( 343, 205 )
+
+[node name="BigSpikes3" parent="NavigationController/Traps/Spikes/Right" index="2" instance=ExtResource( 4 )]
+position = Vector2( 343, 157 )
+
+[node name="BigSpikes4" parent="NavigationController/Traps/Spikes/Right" index="3" instance=ExtResource( 4 )]
+position = Vector2( 343, 109 )
+
+[node name="Left" type="YSort" parent="NavigationController/Traps/Spikes" index="1"]
+position = Vector2( -256, 0 )
+
+[node name="BigSpikes" parent="NavigationController/Traps/Spikes/Left" index="0" instance=ExtResource( 4 )]
+position = Vector2( 343, 253 )
+
+[node name="BigSpikes2" parent="NavigationController/Traps/Spikes/Left" index="1" instance=ExtResource( 4 )]
+position = Vector2( 343, 205 )
+
+[node name="BigSpikes3" parent="NavigationController/Traps/Spikes/Left" index="2" instance=ExtResource( 4 )]
+position = Vector2( 343, 157 )
+
+[node name="BigSpikes4" parent="NavigationController/Traps/Spikes/Left" index="3" instance=ExtResource( 4 )]
+position = Vector2( 343, 109 )
+
+[node name="Top" type="YSort" parent="NavigationController/Traps/Spikes" index="2"]
+
+[node name="BigSpikes" parent="NavigationController/Traps/Spikes/Top" index="0" instance=ExtResource( 4 )]
+position = Vector2( 55, 45 )
+
+[node name="BigSpikes2" parent="NavigationController/Traps/Spikes/Top" index="1" instance=ExtResource( 4 )]
+position = Vector2( 95, 45 )
+
+[node name="BigSpikes3" parent="NavigationController/Traps/Spikes/Top" index="2" instance=ExtResource( 4 )]
+position = Vector2( 143, 45 )
+
+[node name="BigSpikes4" parent="NavigationController/Traps/Spikes/Top" index="3" instance=ExtResource( 4 )]
+position = Vector2( 191, 45 )
+
+[node name="BigSpikes5" parent="NavigationController/Traps/Spikes/Top" index="4" instance=ExtResource( 4 )]
+position = Vector2( 239, 45 )
+
+[node name="BigSpikes6" parent="NavigationController/Traps/Spikes/Top" index="5" instance=ExtResource( 4 )]
+position = Vector2( 287, 45 )
+
+[node name="BigSpikes7" parent="NavigationController/Traps/Spikes/Top" index="6" instance=ExtResource( 4 )]
+position = Vector2( 335, 45 )
+
+[node name="BigSpikes8" parent="NavigationController/Traps/Spikes/Top" index="7" instance=ExtResource( 4 )]
+position = Vector2( 375, 45 )
+
+[node name="Middle" type="YSort" parent="NavigationController/Traps/Spikes" index="3"]
+
+[node name="SmallSpikes" parent="NavigationController/Traps/Spikes/Middle" index="0" instance=ExtResource( 3 )]
+position = Vector2( 167, 229 )
+
+[node name="SmallSpikes3" parent="NavigationController/Traps/Spikes/Middle" index="1" instance=ExtResource( 3 )]
+position = Vector2( 167, 261 )
+
+[node name="SmallSpikes4" parent="NavigationController/Traps/Spikes/Middle" index="2" instance=ExtResource( 3 )]
+position = Vector2( 183, 261 )
+
+[node name="SmallSpikes5" parent="NavigationController/Traps/Spikes/Middle" index="3" instance=ExtResource( 3 )]
+position = Vector2( 199, 277 )
+
+[node name="SmallSpikes6" parent="NavigationController/Traps/Spikes/Middle" index="4" instance=ExtResource( 3 )]
+position = Vector2( 215, 277 )
+
+[node name="SmallSpikes7" parent="NavigationController/Traps/Spikes/Middle" index="5" instance=ExtResource( 3 )]
+position = Vector2( 231, 277 )
+
+[node name="SmallSpikes8" parent="NavigationController/Traps/Spikes/Middle" index="6" instance=ExtResource( 3 )]
+position = Vector2( 247, 277 )
+
+[node name="SmallSpikes9" parent="NavigationController/Traps/Spikes/Middle" index="7" instance=ExtResource( 3 )]
+position = Vector2( 263, 261 )
+
+[node name="SmallSpikes10" parent="NavigationController/Traps/Spikes/Middle" index="8" instance=ExtResource( 3 )]
+position = Vector2( 263, 245 )
+
+[node name="SmallSpikes11" parent="NavigationController/Traps/Spikes/Middle" index="9" instance=ExtResource( 3 )]
+position = Vector2( 263, 229 )
+
+[node name="SmallSpikes12" parent="NavigationController/Traps/Spikes/Middle" index="10" instance=ExtResource( 3 )]
+position = Vector2( 263, 213 )
+
+[node name="SmallSpikes13" parent="NavigationController/Traps/Spikes/Middle" index="11" instance=ExtResource( 3 )]
+position = Vector2( 247, 197 )
+
+[node name="SmallSpikes14" parent="NavigationController/Traps/Spikes/Middle" index="12" instance=ExtResource( 3 )]
+position = Vector2( 231, 181 )
+
+[node name="SmallSpikes15" parent="NavigationController/Traps/Spikes/Middle" index="13" instance=ExtResource( 3 )]
+position = Vector2( 231, 165 )
+
+[node name="SmallSpikes17" parent="NavigationController/Traps/Spikes/Middle" index="14" instance=ExtResource( 3 )]
+position = Vector2( 263, 133 )
+
+[node name="SmallSpikes18" parent="NavigationController/Traps/Spikes/Middle" index="15" instance=ExtResource( 3 )]
+position = Vector2( 263, 117 )
+
+[node name="SmallSpikes19" parent="NavigationController/Traps/Spikes/Middle" index="16" instance=ExtResource( 3 )]
+position = Vector2( 263, 101 )
+
+[node name="SmallSpikes20" parent="NavigationController/Traps/Spikes/Middle" index="17" instance=ExtResource( 3 )]
+position = Vector2( 247, 85 )
+
+[node name="SmallSpikes21" parent="NavigationController/Traps/Spikes/Middle" index="18" instance=ExtResource( 3 )]
+position = Vector2( 231, 85 )
+
+[node name="SmallSpikes22" parent="NavigationController/Traps/Spikes/Middle" index="19" instance=ExtResource( 3 )]
+position = Vector2( 215, 85 )
+
+[node name="SmallSpikes23" parent="NavigationController/Traps/Spikes/Middle" index="20" instance=ExtResource( 3 )]
+position = Vector2( 199, 85 )
+
+[node name="SmallSpikes24" parent="NavigationController/Traps/Spikes/Middle" index="21" instance=ExtResource( 3 )]
+position = Vector2( 183, 101 )
+
+[node name="SmallSpikes25" parent="NavigationController/Traps/Spikes/Middle" index="22" instance=ExtResource( 3 )]
+position = Vector2( 167, 101 )
+
+[node name="SmallSpikes26" parent="NavigationController/Traps/Spikes/Middle" index="23" instance=ExtResource( 3 )]
+position = Vector2( 167, 117 )
+
+[node name="SmallSpikes27" parent="NavigationController/Traps/Spikes/Middle" index="24" instance=ExtResource( 3 )]
+position = Vector2( 167, 133 )
+
+[node name="SmallSpikes28" parent="NavigationController/Traps/Spikes/Middle" index="25" instance=ExtResource( 3 )]
+position = Vector2( 167, 149 )
+
+[node name="SmallSpikes29" parent="NavigationController/Traps/Spikes/Middle" index="26" instance=ExtResource( 3 )]
+position = Vector2( 183, 165 )
+
+[node name="SmallSpikes30" parent="NavigationController/Traps/Spikes/Middle" index="27" instance=ExtResource( 3 )]
+position = Vector2( 199, 181 )
+
+[node name="SmallSpikes31" parent="NavigationController/Traps/Spikes/Middle" index="28" instance=ExtResource( 3 )]
+position = Vector2( 199, 197 )
+
+[node name="SmallSpikes32" parent="NavigationController/Traps/Spikes/Middle" index="29" instance=ExtResource( 3 )]
+position = Vector2( 183, 213 )
+
+[node name="Flamethrowers" type="YSort" parent="NavigationController/Traps" index="1"]
+position = Vector2( 0, -46 )
+
+[node name="Top" type="YSort" parent="NavigationController/Traps/Flamethrowers" index="0"]
+
+[node name="FlameThrower" parent="NavigationController/Traps/Flamethrowers/Top" index="0" instance=ExtResource( 5 )]
+position = Vector2( 24, 46 )
+
+[node name="FlameThrower3" parent="NavigationController/Traps/Flamethrowers/Top" index="1" instance=ExtResource( 5 )]
+position = Vector2( 168, 28 )
+
+[node name="FlameThrower5" parent="NavigationController/Traps/Flamethrowers/Top" index="2" instance=ExtResource( 5 )]
+position = Vector2( 264, 28 )
+
+[node name="FlameThrower2" parent="NavigationController/Traps/Flamethrowers/Top" index="3" instance=ExtResource( 5 )]
+position = Vector2( 408, 46 )
+
+[node name="Middle" type="YSort" parent="NavigationController/Traps/Flamethrowers" index="1"]
+
+[node name="FlameThrower" parent="NavigationController/Traps/Flamethrowers/Middle" index="0" instance=ExtResource( 5 )]
+position = Vector2( 32, 328 )
+scale = Vector2( 1, -1 )
+
+[node name="FlameThrower2" parent="NavigationController/Traps/Flamethrowers/Middle" index="1" instance=ExtResource( 5 )]
+position = Vector2( 96, 327 )
+scale = Vector2( 1, -1 )
+
+[node name="FlameThrower3" parent="NavigationController/Traps/Flamethrowers/Middle" index="2" instance=ExtResource( 5 )]
+position = Vector2( 168, 327 )
+scale = Vector2( 1, -1 )
+
+[node name="FlameThrower4" parent="NavigationController/Traps/Flamethrowers/Middle" index="3" instance=ExtResource( 5 )]
+position = Vector2( 400, 327 )
+scale = Vector2( 1, -1 )
+
+[node name="FlameThrower3" parent="NavigationController/Traps/Flamethrowers" index="2" instance=ExtResource( 5 )]
+position = Vector2( 5, 172 )
+rotation = -1.5708
+
+[node name="FlameThrower2" parent="NavigationController/Traps/Flamethrowers" index="3" instance=ExtResource( 5 )]
+position = Vector2( 426, 174 )
+rotation = -1.57079
+scale = Vector2( 1, -1 )
+
+[node name="Loot" parent="NavigationController" index="9"]
+position = Vector2( 0, -18 )
+
+[node name="Chest1" parent="NavigationController/Loot" index="0" instance=ExtResource( 9 )]
+position = Vector2( 221, 58 )
+
+[node name="Props" parent="NavigationController" index="10"]
+position = Vector2( 5, 59 )
+tile_data = PoolIntArray( -131064, 7, 0, -131054, 7, 0, 262146, 0, 0, 262151, 0, 0, 262167, 0, 0, 458759, 0, 0, 524306, 0, 0, 917507, 0, 0, 917510, 0, 0, 917523, 0, 0, 917526, 0, 0 )
+
+[node name="Props1" parent="NavigationController" index="11"]
+position = Vector2( 5, 59 )
+
+[node name="Pillars" type="YSort" parent="NavigationController/Props1" index="0"]
+
+[node name="Right" type="YSort" parent="NavigationController/Props1/Pillars" index="0"]
+
+[node name="Pillar" parent="NavigationController/Props1/Pillars/Right" index="0" instance=ExtResource( 8 )]
+position = Vector2( 312, 56 )
+
+[node name="Pillar2" parent="NavigationController/Props1/Pillars/Right" index="1" instance=ExtResource( 8 )]
+position = Vector2( 376, 56 )
+
+[node name="Pillar3" parent="NavigationController/Props1/Pillars/Right" index="2" instance=ExtResource( 8 )]
+position = Vector2( 312, 104 )
+
+[node name="Pillar4" parent="NavigationController/Props1/Pillars/Right" index="3" instance=ExtResource( 8 )]
+position = Vector2( 376, 104 )
+
+[node name="Pillar5" parent="NavigationController/Props1/Pillars/Right" index="4" instance=ExtResource( 8 )]
+position = Vector2( 312, 160 )
+
+[node name="Pillar6" parent="NavigationController/Props1/Pillars/Right" index="5" instance=ExtResource( 8 )]
+position = Vector2( 376, 160 )
+
+[node name="Pillar7" parent="NavigationController/Props1/Pillars/Right" index="6" instance=ExtResource( 8 )]
+position = Vector2( 312, 216 )
+
+[node name="Pillar8" parent="NavigationController/Props1/Pillars/Right" index="7" instance=ExtResource( 8 )]
+position = Vector2( 376, 216 )
+
+[node name="Left" type="YSort" parent="NavigationController/Props1/Pillars" index="1"]
+position = Vector2( -256, 0 )
+
+[node name="Pillar" parent="NavigationController/Props1/Pillars/Left" index="0" instance=ExtResource( 8 )]
+position = Vector2( 312, 56 )
+
+[node name="Pillar2" parent="NavigationController/Props1/Pillars/Left" index="1" instance=ExtResource( 8 )]
+position = Vector2( 376, 56 )
+
+[node name="Pillar3" parent="NavigationController/Props1/Pillars/Left" index="2" instance=ExtResource( 8 )]
+position = Vector2( 312, 104 )
+
+[node name="Pillar4" parent="NavigationController/Props1/Pillars/Left" index="3" instance=ExtResource( 8 )]
+position = Vector2( 376, 104 )
+
+[node name="Pillar5" parent="NavigationController/Props1/Pillars/Left" index="4" instance=ExtResource( 8 )]
+position = Vector2( 312, 160 )
+
+[node name="Pillar6" parent="NavigationController/Props1/Pillars/Left" index="5" instance=ExtResource( 8 )]
+position = Vector2( 376, 160 )
+
+[node name="Pillar7" parent="NavigationController/Props1/Pillars/Left" index="6" instance=ExtResource( 8 )]
+position = Vector2( 312, 216 )
+
+[node name="Pillar8" parent="NavigationController/Props1/Pillars/Left" index="7" instance=ExtResource( 8 )]
+position = Vector2( 376, 216 )
+
+[node name="Flags" type="YSort" parent="NavigationController/Props1" index="1"]
+position = Vector2( 0, -49 )
+
+[node name="Flag" parent="NavigationController/Props1/Flags" index="0" instance=ExtResource( 7 )]
+position = Vector2( 80, 24 )
+
+[node name="Flag2" parent="NavigationController/Props1/Flags" index="1" instance=ExtResource( 7 )]
+position = Vector2( 352, 24 )
+
+[node name="Fountains" type="YSort" parent="NavigationController/Props1" index="2"]
+position = Vector2( 0, -46 )
+
+[node name="LavaFountain" parent="NavigationController/Props1/Fountains" index="0" instance=ExtResource( 6 )]
+position = Vector2( 119, 35 )
+
+[node name="LavaFountain2" parent="NavigationController/Props1/Fountains" index="1" instance=ExtResource( 6 )]
+position = Vector2( 311, 35 )

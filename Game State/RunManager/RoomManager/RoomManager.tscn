@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Game State/RunManager/RoomManager/MediumRooms.gd" type="Script" id=1]
+[ext_resource path="res://Game State/RunManager/RoomManager/RoomManager.gd" type="Script" id=2]
+[ext_resource path="res://Game State/RunManager/RoomManager/LargeRooms.gd" type="Script" id=3]
+[ext_resource path="res://Game State/RunManager/RoomManager/SmallRooms.gd" type="Script" id=4]
+[ext_resource path="res://Game State/RunManager/RoomManager/ThreeItemRooms.gd" type="Script" id=5]
+[ext_resource path="res://Game State/RunManager/RoomManager/BossRooms.gd" type="Script" id=6]
+[ext_resource path="res://Game State/RunManager/RoomManager/SpecialRooms.gd" type="Script" id=7]
+
+[node name="RoomManager" type="Node"]
+script = ExtResource( 2 )
+
+[node name="SmallRooms" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="MediumRooms" type="Node" parent="."]
+script = ExtResource( 1 )
+
+[node name="LargeRooms" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="ThreeItemRooms" type="Node" parent="."]
+script = ExtResource( 5 )
+
+[node name="SpecialRooms" type="Node" parent="."]
+script = ExtResource( 7 )
+
+[node name="BossRooms" type="Node" parent="."]
+script = ExtResource( 6 )

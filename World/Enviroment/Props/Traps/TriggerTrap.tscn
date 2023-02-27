@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Characters/Collision Detection/Hitbox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Default Classes/VisibilityOptimisation.tscn" type="PackedScene" id=2]
+
+[node name="TriggerTrap" type="Node2D" groups=["Trap"]]
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="Triggered" type="AudioStreamPlayer2D" parent="SFX"]
+
+[node name="Engage" type="AudioStreamPlayer2D" parent="SFX"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite")
+
+[node name="Sprite" type="Sprite" parent="."]
+light_mask = 4
+
+[node name="TriggerZone" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 10
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerZone"]
+
+[node name="Hitbox" parent="." instance=ExtResource( 1 )]
+visible = false
+collision_mask = 20
+TRAP = true
+
+[node name="VisibilityOptimisation" parent="." instance=ExtResource( 2 )]
+
+[editable path="Hitbox"]

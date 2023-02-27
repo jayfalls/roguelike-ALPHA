@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Characters/Weapons/MeleeWeapon/Slashes/SlashEffect.tscn" type="PackedScene" id=1]
+
+[node name="MaceSlash" instance=ExtResource( 1 )]
+trail_widths = [ 10, 8 ]
+
+[node name="TrailPoint0" parent="." index="0"]
+position = Vector2( 0, -11 )
+
+[node name="TrailPoint1" parent="." index="1"]
+position = Vector2( 0, -11 )

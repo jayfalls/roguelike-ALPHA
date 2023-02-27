@@ -1,0 +1,508 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://World/Enviroment/Props/Interactive/door.png" type="Texture" id=1]
+[ext_resource path="res://World/Enviroment/Props/Interactive/Door.gd" type="Script" id=2]
+[ext_resource path="res://UI/Overlays/lock.png" type="Texture" id=3]
+[ext_resource path="res://Sound/SFX/Environment/Doors/DoorClose.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sound/SFX/Environment/Doors/DoorOpen.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sound/SFX/Environment/Doors/CinematicTrans.wav" type="AudioStream" id=6]
+[ext_resource path="res://Sound/SFX/Environment/Doors/SD_Low+Hi_01.wav" type="AudioStream" id=7]
+[ext_resource path="res://Sound/SFX/Environment/Doors/Swoosh very long.wav" type="AudioStream" id=8]
+[ext_resource path="res://Sound/SFX/Environment/Doors/crash_2.wav" type="AudioStream" id=9]
+[ext_resource path="res://Default Classes/VisibilityOptimisation.tscn" type="PackedScene" id=10]
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 3 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 3 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 3 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 3 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=31]
+animations = [ {
+"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
+"loop": false,
+"name": "default",
+"speed": 8.0
+} ]
+
+[sub_resource type="Animation" id=13]
+resource_name = "Close"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.2, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 3, 2, 1, 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Frame:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.2, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 3, 2, 1, 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("SFX/CloseReverb:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("SFX/Close:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.15 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("SFX/Shut:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "Closed"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Frame:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "Open"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SFX/Open:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "Opened"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 8 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Frame:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 8 ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "opened"
+} ]
+}
+
+[sub_resource type="Animation" id=34]
+resource_name = "Breaking"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Lock:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1, 4 ), Vector2( 1, 4 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SFX/LockBreak:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "Floating"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Lock:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 6 ), Vector2( 0, 5 ), Vector2( 0, 7 ) ]
+}
+
+[sub_resource type="Animation" id=33]
+resource_name = "Still"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Lock:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 4 ) ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "DoorBlocked"
+length = 0.05
+tracks/0/type = "method"
+tracks/0/path = NodePath("..")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "door_blocked"
+} ]
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "EntryBlocked"
+length = 0.05
+tracks/0/type = "method"
+tracks/0/path = NodePath("..")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "entry_blocked"
+} ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "FullyBlocked"
+length = 0.05
+tracks/0/type = "method"
+tracks/0/path = NodePath("..")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "fully_blocked"
+} ]
+}
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 10, 1.5 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 24, 1 )
+
+[sub_resource type="RectangleShape2D" id=35]
+extents = Vector2( 10, 1 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 10, 10.75 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 10, 7 )
+
+[node name="Door" type="Node2D"]
+light_mask = 2
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+light_mask = 4
+texture = ExtResource( 1 )
+hframes = 9
+frame = 8
+
+[node name="Frame" type="Sprite" parent="."]
+visible = false
+light_mask = 4
+z_index = 2
+texture = ExtResource( 1 )
+hframes = 9
+frame = 8
+
+[node name="Lock" type="AnimatedSprite" parent="."]
+visible = false
+light_mask = 4
+position = Vector2( -1, 4 )
+scale = Vector2( 0.7, 0.7 )
+frames = SubResource( 31 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Close = SubResource( 13 )
+anims/Closed = SubResource( 20 )
+anims/Open = SubResource( 11 )
+anims/Opened = SubResource( 17 )
+
+[node name="AnimationPlayerLock" type="AnimationPlayer" parent="."]
+anims/Breaking = SubResource( 34 )
+anims/Floating = SubResource( 32 )
+anims/Still = SubResource( 33 )
+blend_times = [ "Floating", "Still", 0.1 ]
+
+[node name="AnimationPlayerCollisions" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimationPlayer")
+anims/DoorBlocked = SubResource( 23 )
+anims/EntryBlocked = SubResource( 22 )
+anims/FullyBlocked = SubResource( 24 )
+
+[node name="Collision" type="Node2D" parent="."]
+
+[node name="PassageDetection" type="Area2D" parent="Collision"]
+visible = false
+position = Vector2( 0, 11 )
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/PassageDetection"]
+shape = SubResource( 16 )
+
+[node name="TopDetection" type="Area2D" parent="Collision"]
+visible = false
+position = Vector2( 0, -13 )
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/TopDetection"]
+shape = SubResource( 15 )
+
+[node name="EntryDetection" type="Area2D" parent="Collision"]
+position = Vector2( 0, 26 )
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/EntryDetection"]
+position = Vector2( 0, -9 )
+shape = SubResource( 35 )
+
+[node name="PassageCollision" type="StaticBody2D" parent="Collision"]
+visible = false
+position = Vector2( 0, 6.5 )
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/PassageCollision"]
+position = Vector2( 0, -1.25 )
+shape = SubResource( 10 )
+disabled = true
+
+[node name="DoorCollision" type="StaticBody2D" parent="Collision"]
+position = Vector2( 0, 6.5 )
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/DoorCollision"]
+position = Vector2( 0, -2.5 )
+shape = SubResource( 10 )
+disabled = true
+
+[node name="WallCollision" type="StaticBody2D" parent="Collision"]
+visible = false
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="WallLeftCollision" type="CollisionPolygon2D" parent="Collision/WallCollision"]
+position = Vector2( -26, 0 )
+polygon = PoolVector2Array( 10, -8, 16, -8, 16, 16, 10, 16 )
+
+[node name="WallRightCollision" type="CollisionPolygon2D" parent="Collision/WallCollision"]
+polygon = PoolVector2Array( 10, -8, 16, -8, 16, 16, 10, 16 )
+
+[node name="EntryCollision" type="StaticBody2D" parent="Collision"]
+visible = false
+position = Vector2( 0, 23 )
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/EntryCollision"]
+shape = SubResource( 14 )
+disabled = true
+
+[node name="SFX" type="Node2D" parent="."]
+
+[node name="Open" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource( 5 )
+
+[node name="Close" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource( 4 )
+pitch_scale = 0.6
+
+[node name="CloseReverb" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource( 7 )
+volume_db = -4.0
+
+[node name="OpenReverb" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource( 8 )
+
+[node name="LockBreak" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 6 )
+volume_db = -10.0
+pitch_scale = 0.74
+
+[node name="Shut" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource( 9 )
+volume_db = 2.0
+pitch_scale = 0.6
+
+[node name="MarkerLocation" type="Position2D" parent="."]
+position = Vector2( 0, -8 )
+
+[node name="VisibilityOptimisation" parent="." instance=ExtResource( 10 )]
+
+[connection signal="body_entered" from="Collision/PassageDetection" to="." method="_on_PassageDetection_body_entered"]
+[connection signal="body_entered" from="Collision/TopDetection" to="." method="_on_TopDetection_body_entered"]
+[connection signal="body_exited" from="Collision/EntryDetection" to="." method="_on_EntryDetection_body_exited"]

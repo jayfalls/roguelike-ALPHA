@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hurt_04.ogg-f906a2152d4ceb7b4ab0a943ab6ec8e5.oggstr"
+
+[deps]
+
+source_file="res://Sound/SFX/Combat/Player Damage/hurt_04.ogg"
+dest_files=[ "res://.import/hurt_04.ogg-f906a2152d4ceb7b4ab0a943ab6ec8e5.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

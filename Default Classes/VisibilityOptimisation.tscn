@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Default Classes/VisibilityOptimisation.gd" type="Script" id=1]
+
+[node name="VisibilityOptimisation" type="VisibilityNotifier2D"]
+visible = false
+rect = Rect2( -25, -25, 50, 50 )
+script = ExtResource( 1 )
+
+[connection signal="screen_entered" from="." to="." method="_on_VisibilityOptimisation_screen_entered"]
+[connection signal="screen_exited" from="." to="." method="_on_VisibilityOptimisation_screen_exited"]

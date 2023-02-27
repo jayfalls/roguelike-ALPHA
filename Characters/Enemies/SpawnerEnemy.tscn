@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Characters/Enemies/RangedWeaponEnemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Characters/Enemies/SpawnerEnemy.gd" type="Script" id=2]
+
+[node name="SpawnerEnemy" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+spawn_type = 0
+
+[node name="AimPivot" parent="." index="6"]
+weapon_type = 2
+
+[editable path="AimPivot"]
+[editable path="Collision/SoftCollision"]
+[editable path="Collision/Hurtbox"]
+[editable path="Collision/Hitbox"]
+[editable path="Collision/AttackZone"]

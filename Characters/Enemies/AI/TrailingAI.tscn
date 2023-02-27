@@ -1,0 +1,88 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://addons/beehave/nodes/beehave_root.gd" type="Script" id=1]
+[ext_resource path="res://addons/beehave/nodes/decorators/limiter.gd" type="Script" id=2]
+[ext_resource path="res://Characters/Enemies/AI/Behaviours/Actions/Wait.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Characters/Enemies/AI/Behaviours/Actions/Wander.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/beehave/nodes/composites/selector.gd" type="Script" id=5]
+[ext_resource path="res://addons/beehave/nodes/composites/while.gd" type="Script" id=6]
+[ext_resource path="res://Characters/Enemies/AI/Behaviours/Conditions/IsCloseToPlayer?.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Characters/Enemies/AI/Behaviours/Actions/MoveToRandomPosAroundPlayer.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Characters/Enemies/AI/Behaviours/Conditions/IsIdle?.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Characters/Enemies/AI/Behaviours/Conditions/IsSpawning?.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Characters/Enemies/AI/Behaviours/Conditions/IsAttacking?.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Characters/Enemies/AI/Behaviours/Conditions/TakingDamage?.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Characters/Enemies/AI/Behaviours/Actions/MoveToPlayer.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Characters/Enemies/AI/Behaviours/Conditions/IsRecovering?.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Characters/Enemies/AI/Behaviours/GetUnstuck.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Characters/Enemies/AI/Behaviours/Actions/Attack.tscn" type="PackedScene" id=17]
+[ext_resource path="res://addons/beehave/nodes/composites/sequence_star.gd" type="Script" id=19]
+[ext_resource path="res://Characters/Enemies/AI/Behaviours/Conditions/IsStaggered?.tscn" type="PackedScene" id=20]
+
+[node name="TrailingAI" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Either" type="Node" parent="."]
+script = ExtResource( 5 )
+
+[node name="Spawning" type="Node" parent="Either"]
+script = ExtResource( 19 )
+
+[node name="IsSpawning\?" parent="Either/Spawning" instance=ExtResource( 10 )]
+
+[node name="Staggered" type="Node" parent="Either"]
+script = ExtResource( 19 )
+
+[node name="IsStaggered\?" parent="Either/Staggered" instance=ExtResource( 20 )]
+
+[node name="Recovering" type="Node" parent="Either"]
+script = ExtResource( 19 )
+
+[node name="IsRecovering\?" parent="Either/Recovering" instance=ExtResource( 14 )]
+
+[node name="TakeDamage" type="Node" parent="Either"]
+script = ExtResource( 19 )
+
+[node name="TakingDamage\?" parent="Either/TakeDamage" instance=ExtResource( 12 )]
+
+[node name="Attack" type="Node" parent="Either"]
+script = ExtResource( 6 )
+
+[node name="IsAttacking\?" parent="Either/Attack" instance=ExtResource( 11 )]
+
+[node name="Attack" parent="Either/Attack" instance=ExtResource( 17 )]
+
+[node name="Movement" type="Node" parent="Either"]
+script = ExtResource( 5 )
+
+[node name="GetUnstuck" parent="Either/Movement" instance=ExtResource( 15 )]
+
+[node name="Idle" type="Node" parent="Either/Movement"]
+script = ExtResource( 6 )
+
+[node name="IsIdle\?" parent="Either/Movement/Idle" instance=ExtResource( 9 )]
+
+[node name="Wander" type="Node" parent="Either/Movement/Idle"]
+script = ExtResource( 19 )
+
+[node name="Wait" parent="Either/Movement/Idle/Wander" instance=ExtResource( 3 )]
+
+[node name="Wander" parent="Either/Movement/Idle/Wander" instance=ExtResource( 4 )]
+
+[node name="Chase" type="Node" parent="Either/Movement"]
+script = ExtResource( 5 )
+
+[node name="TryAttack" type="Node" parent="Either/Movement/Chase"]
+script = ExtResource( 6 )
+
+[node name="IsCloseToPlayer\?" parent="Either/Movement/Chase/TryAttack" instance=ExtResource( 7 )]
+
+[node name="MoveToPlayer" parent="Either/Movement/Chase/TryAttack" instance=ExtResource( 13 )]
+
+[node name="TryToGetClose" type="Node" parent="Either/Movement/Chase"]
+script = ExtResource( 2 )
+max_time = 1.0
+
+[node name="GetClose" parent="Either/Movement/Chase/TryToGetClose" instance=ExtResource( 8 )]
+
+[editable path="Either/Movement/GetUnstuck"]

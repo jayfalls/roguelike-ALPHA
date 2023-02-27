@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Characters/Collision Detection/Hitbox.tscn" type="PackedScene" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 30.0
+
+[node name="Hitbox" instance=ExtResource( 1 )]
+scale = Vector2( 0.01, 0.01 )
+collision_layer = 64
+collision_mask = 16
+monitoring = true
+monitorable = true
+CHAIN_HITBOX = true
+SPAWNED = true
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource( 1 )

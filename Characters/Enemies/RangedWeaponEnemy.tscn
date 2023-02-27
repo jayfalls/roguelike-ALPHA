@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Characters/Enemies/WeaponEnemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Characters/Enemies/RangedWeaponEnemy.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[node name="RangedWeaponEnemy" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+ACCELERATION = 700
+MAX_SPEED = 100
+slow_modifier = 3
+
+[node name="AttackTimer" type="Timer" parent="Traits" index="3"]
+wait_time = 4.0
+
+[node name="AimPivot" parent="." index="6"]
+weapon_type = 1
+LOOK_SMOOTHNESS = 0.1
+
+[node name="CollisionShape2D" parent="Collision/AttackZone" index="0"]
+shape = SubResource( 1 )
+
+[connection signal="timeout" from="Traits/AttackTimer" to="." method="_on_AttackTimer_timeout"]
+
+[editable path="AimPivot"]
+[editable path="Collision/SoftCollision"]
+[editable path="Collision/Hurtbox"]
+[editable path="Collision/Hitbox"]
+[editable path="Collision/AttackZone"]

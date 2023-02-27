@@ -1,0 +1,436 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://Characters/Player/PlayerStateMachine.gd" type="Script" id=1]
+[ext_resource path="res://Characters/Player/Player.gd" type="Script" id=2]
+[ext_resource path="res://Characters/Character.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Characters/Player/black_cultist.png" type="Texture" id=4]
+[ext_resource path="res://Characters/Weapons/AimPivot.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Effects/Shadows/SmallShadow.png" type="Texture" id=6]
+[ext_resource path="res://World/Enviroment/Lighting/AmbientLight.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Sound/SFX/FootstepsController.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Sound/SFX/Creatures/Death/die_02.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Sound/SFX/Combat/Player Damage/hurt_04.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Sound/SFX/Combat/Swooshes/9 - whoosh swoosh - short.wav" type="AudioStream" id=12]
+[ext_resource path="res://Characters/Player/Items.gd" type="Script" id=13]
+[ext_resource path="res://Characters/Collision Detection/Hitbox.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Effects/AreaExplosion.tscn" type="PackedScene" id=15]
+
+[sub_resource type="Animation" id=10]
+resource_name = "Dash"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 6, 8 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 0.9 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.9, 0.9 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("SFX/Dash:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "Dead"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10, 11 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.6, 1.2 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Hurtbox:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("SFX/Death:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "Idle"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 5, 6, 7 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.05, 1.05 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "Take Damage"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 5 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.2, 0.8 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("SFX/HurtHit:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Walk"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.9, 0.9 ), Vector2( 1, 1 ), Vector2( 0.9, 0.9 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("SFX/FootstepsController")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "step"
+} ]
+}
+
+[sub_resource type="CanvasItemMaterial" id=12]
+particles_animation = true
+particles_anim_h_frames = 7
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticlesMaterial" id=2]
+emission_shape = 1
+emission_sphere_radius = 50.0
+flag_disable_z = true
+spread = 180.0
+flatness = 1.0
+gravity = Vector3( 0, -50, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+anim_speed = 10.0
+anim_speed_random = 0.84
+
+[sub_resource type="CircleShape2D" id=13]
+radius = 45.0
+
+[sub_resource type="Animation" id=14]
+resource_name = "start"
+length = 0.8
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "damage_on"
+}, {
+"args": [  ],
+"method": "damage_off"
+} ]
+}
+
+[sub_resource type="CapsuleShape2D" id=8]
+radius = 2.0
+height = 4.0
+
+[sub_resource type="CapsuleShape2D" id=15]
+radius = 4.16667
+height = 3.66667
+
+[node name="Player" groups=["Player"] instance=ExtResource( 3 )]
+scale = Vector2( 1.2, 1.2 )
+collision_layer = 2
+script = ExtResource( 2 )
+slow_modifier = 4
+
+[node name="FiniteStateMachine" parent="Traits" index="0"]
+script = ExtResource( 1 )
+
+[node name="Items" type="Node" parent="Traits" index="1"]
+script = ExtResource( 13 )
+
+[node name="Stats" parent="Traits" index="2"]
+MAXHEALTH = 400
+MAXSTAMINA = 15
+MAXSHIELD = 400
+SHIELD = 400
+
+[node name="AnimationPlayer" parent="." index="1"]
+reset_on_save = false
+anims/Dash = SubResource( 10 )
+anims/Dead = SubResource( 11 )
+anims/Idle = SubResource( 1 )
+"anims/Take Damage" = SubResource( 9 )
+anims/Walk = SubResource( 3 )
+
+[node name="Shadow" parent="." index="2"]
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 6 )
+
+[node name="Sprite" parent="." index="3"]
+position = Vector2( 0, -6 )
+scale = Vector2( 1, 0.9 )
+texture = ExtResource( 4 )
+hframes = 12
+frame = 8
+
+[node name="AmbientLight" parent="." index="5" instance=ExtResource( 7 )]
+texture_scale = 2.0
+color = Color( 0.87451, 0.647059, 0.87451, 1 )
+
+[node name="MovePivot" type="Position2D" parent="." index="6"]
+
+[node name="DashPoint" type="Position2D" parent="MovePivot" index="0"]
+position = Vector2( 33, 0 )
+
+[node name="AimPivotMelee" parent="." index="7" instance=ExtResource( 5 )]
+
+[node name="AimArrow" parent="AimPivotMelee" index="0"]
+visible = true
+
+[node name="AimPivotRanged" parent="." index="8" instance=ExtResource( 5 )]
+visible = false
+weapon_type = 1
+LOOK_SMOOTHNESS = 0.1
+
+[node name="AreaExplosion" parent="." index="9" instance=ExtResource( 15 )]
+visible = false
+material = SubResource( 12 )
+process_material = SubResource( 2 )
+
+[node name="UltimateHitbox" parent="AreaExplosion/Sprite" index="0" instance=ExtResource( 14 )]
+scale = Vector2( 0.333333, 0.333333 )
+collision_mask = 16
+
+[node name="CollisionShape2D" parent="AreaExplosion/Sprite/UltimateHitbox" index="0"]
+shape = SubResource( 13 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AreaExplosion/Sprite/UltimateHitbox" index="1"]
+reset_on_save = false
+anims/start = SubResource( 14 )
+
+[node name="CollisionShape2D" parent="." index="10"]
+rotation = 1.5708
+shape = SubResource( 8 )
+
+[node name="Hurtbox" parent="Collision" index="0"]
+collision_layer = 4
+
+[node name="CollisionShape2D" parent="Collision/Hurtbox" index="0"]
+position = Vector2( 0, -4 )
+shape = SubResource( 15 )
+
+[node name="FootstepsController" parent="SFX" index="0" instance=ExtResource( 9 )]
+
+[node name="Hurt" parent="SFX" index="1"]
+stream = ExtResource( 11 )
+volume_db = -4.0
+pitch_scale = 1.3
+
+[node name="Dash" type="AudioStreamPlayer" parent="SFX" index="2"]
+stream = ExtResource( 12 )
+volume_db = 2.0
+
+[node name="Death" parent="SFX" index="3"]
+stream = ExtResource( 10 )
+volume_db = -2.0
+
+[connection signal="staminaUnblocked" from="Traits/Stats" to="." method="_on_Stats_staminaUnblocked"]
+[connection signal="weapon_ready" from="AimPivotMelee" to="." method="_on_AimPivotMelee_weapon_ready"]
+[connection signal="weapon_ready" from="AimPivotRanged" to="." method="_on_AimPivotRanged_weapon_ready"]
+
+[editable path="AimPivotMelee"]
+[editable path="AreaExplosion"]
+[editable path="AreaExplosion/Sprite/UltimateHitbox"]
+[editable path="Collision/Hurtbox"]

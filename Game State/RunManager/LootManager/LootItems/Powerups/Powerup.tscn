@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Game State/RunManager/LootManager/LootItems/LootItem.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game State/RunManager/LootManager/LootItems/Powerups/powerup.png" type="Texture" id=2]
+[ext_resource path="res://Game State/RunManager/LootManager/LootItems/Powerups/Powerup.gd" type="Script" id=3]
+
+[node name="LootItem" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Sprite" parent="CollisionShape2D" index="2"]
+texture = ExtResource( 2 )
+
+[node name="Arrow" parent="CollisionShape2D/Interaction" index="1"]
+frame = 3

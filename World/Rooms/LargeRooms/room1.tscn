@@ -1,0 +1,305 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://World/Rooms/DefaultRoom.tscn" type="PackedScene" id=1]
+[ext_resource path="res://World/Enviroment/Props/Interactive/Chest1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World/Enviroment/Props/Traps/BigSpikes.tscn" type="PackedScene" id=3]
+[ext_resource path="res://World/Enviroment/Props/Traps/SmallSpikes.tscn" type="PackedScene" id=4]
+[ext_resource path="res://World/Enviroment/Props/Traps/FlameThrower.tscn" type="PackedScene" id=5]
+[ext_resource path="res://World/Enviroment/Props/Tree.tscn" type="PackedScene" id=6]
+[ext_resource path="res://World/Enviroment/Props/Pillar.tscn" type="PackedScene" id=7]
+[ext_resource path="res://World/Enviroment/Lighting/Campfire.tscn" type="PackedScene" id=8]
+[ext_resource path="res://World/Enviroment/Lighting/FrontWallLight.tscn" type="PackedScene" id=9]
+[ext_resource path="res://World/Enviroment/Lighting/SideWallLight.tscn" type="PackedScene" id=10]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 260, 468, 268, 476, 268, 492, 252, 492, 228, 484, 236, 468, 268, 444, 284, 476, 260, 444, 284, 332, 268, 404, 260, 412, 260, 352, 268, 336, 180, 356, 180, 332, 188, 348, 188, 372, 284, 412, 260, 336, 256, 328, 236, 332, 284, 436, 252, 428, 236, 444, 220, 420, 204, 508, 204, 520, 196, 516, 196, 492, 148, 528, 148, 504, 156, 524, 156, 548, 68, 556, 68, 488, 76, 492, 76, 532, 100, 492, 96, 484, 116, 484, 12, 304, 8, 292, 104, 292, 100, 304, 68, 316, 140, 304, 136, 292, 216, 292, 212, 304, 252, 304, 248, 292, 284, 292, 268, 300, 140, 348, 140, 372, 116, 356, 116, 332, 128, 316, -100, 316, -100, 336, -112, 332, -124, 292, -124, 336, -88, 292, -92, 304, -52, 304, -56, 292, -24, 292, -28, 304, 284, 304, 256, 308, 240, 316, 188, 552, 204, 548, 204, 556, 180, 548, -124, 460, -124, 444, -108, 448, 68, 460, -92, 436, 68, 436, 84, 452, 228, 444, 116, 452, 116, 432, 156, 444, 156, 484, 124, 504, -84, 312, -60, 312, 224, 316, 228, 332, 236, 348, 228, 348, 204, 332, 204, 348, 156, 332, 156, 348, 112, 316, 92, 332, 68, 340, 164, 372, 164, 356, 212, 372, 212, 356, 220, 356, 252, 420, 252, 508, 172, 492, 172, 524, 92, 532, 92, 548, 116, 524, 100, 524, 68, 412, 36, 412, 36, 396, 4, 396, 4, 356, 36, 356, 92, 432, 36, 340, 92, 356, 124, 528, 116, 548, 92, 452, -20, 312, 4, 312, 96, 460, 116, 460 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ), PoolIntArray( 6, 7, 1, 0, 8 ), PoolIntArray( 9, 10, 11, 12, 13 ), PoolIntArray( 14, 15, 16, 17 ), PoolIntArray( 9, 18, 10 ), PoolIntArray( 13, 12, 19 ), PoolIntArray( 20, 13, 19, 21 ), PoolIntArray( 6, 22, 7 ), PoolIntArray( 23, 6, 8 ), PoolIntArray( 23, 8, 24, 25 ), PoolIntArray( 26, 27, 28, 29 ), PoolIntArray( 30, 31, 32, 33 ), PoolIntArray( 34, 35, 36, 37 ), PoolIntArray( 38, 39, 40 ), PoolIntArray( 41, 42, 43, 44, 45 ), PoolIntArray( 46, 47, 48, 49 ), PoolIntArray( 50, 51, 52, 53 ), PoolIntArray( 54, 55, 56, 57, 58 ), PoolIntArray( 59, 60, 61, 62 ), PoolIntArray( 61, 63, 62 ), PoolIntArray( 59, 62, 64, 65 ), PoolIntArray( 66, 67, 68, 69 ), PoolIntArray( 52, 70, 53 ), PoolIntArray( 50, 53, 71, 72 ), PoolIntArray( 73, 74, 75 ), PoolIntArray( 73, 75, 34 ), PoolIntArray( 76, 73, 34, 33 ), PoolIntArray( 77, 78, 79 ), PoolIntArray( 80, 77, 79 ), PoolIntArray( 80, 79, 81, 82, 83 ), PoolIntArray( 5, 4, 84, 24 ), PoolIntArray( 85, 86, 87, 88, 31, 89 ), PoolIntArray( 59, 65, 90 ), PoolIntArray( 45, 59, 90, 91 ), PoolIntArray( 72, 71, 20, 21 ), PoolIntArray( 92, 72, 21, 93 ), PoolIntArray( 21, 94, 95, 93 ), PoolIntArray( 49, 92, 93, 96, 46 ), PoolIntArray( 96, 97, 16, 15 ), PoolIntArray( 46, 96, 15 ), PoolIntArray( 46, 15, 98, 58 ), PoolIntArray( 98, 99, 54, 58 ), PoolIntArray( 100, 58, 57, 101 ), PoolIntArray( 45, 44, 100, 101, 102 ), PoolIntArray( 103, 104, 14, 17 ), PoolIntArray( 105, 106, 107, 25 ), PoolIntArray( 25, 108, 23 ), PoolIntArray( 25, 24, 84 ), PoolIntArray( 103, 17, 25, 84, 87, 86 ), PoolIntArray( 4, 3, 109, 26, 29 ), PoolIntArray( 88, 4, 29, 110 ), PoolIntArray( 110, 111, 32, 31, 88 ), PoolIntArray( 37, 112, 113, 34 ), PoolIntArray( 114, 115, 38, 40, 89 ), PoolIntArray( 116, 117, 118 ), PoolIntArray( 118, 119, 120, 121 ), PoolIntArray( 122, 116, 121, 123, 102, 124, 86 ), PoolIntArray( 17, 105, 25 ), PoolIntArray( 55, 103, 86 ), PoolIntArray( 56, 55, 86, 124 ), PoolIntArray( 125, 30, 33, 126 ), PoolIntArray( 116, 118, 121 ), PoolIntArray( 83, 82, 116, 122, 127 ), PoolIntArray( 91, 66, 69, 128 ), PoolIntArray( 45, 91, 128 ), PoolIntArray( 45, 128, 129 ), PoolIntArray( 45, 129, 41 ), PoolIntArray( 102, 101, 124 ), PoolIntArray( 130, 83, 127 ), PoolIntArray( 130, 127, 85, 131 ), PoolIntArray( 131, 85, 89 ), PoolIntArray( 40, 131, 89 ), PoolIntArray( 114, 89, 125, 126 ), PoolIntArray( 126, 33, 34 ), PoolIntArray( 126, 34, 113 ) ]
+outlines = [ PoolVector2Array( 8, 292, 104, 292, 100, 304, 112, 316, 128, 316, 140, 304, 136, 292, 216, 292, 212, 304, 224, 316, 240, 316, 252, 304, 248, 292, 284, 292, 284, 304, 268, 300, 256, 308, 256, 328, 268, 336, 284, 332, 284, 412, 268, 404, 260, 412, 260, 352, 260, 336, 236, 332, 236, 348, 228, 348, 228, 332, 204, 332, 204, 348, 188, 348, 188, 372, 212, 372, 212, 356, 220, 356, 220, 420, 252, 420, 252, 428, 268, 444, 284, 436, 284, 476, 268, 476, 268, 492, 252, 492, 252, 508, 204, 508, 204, 520, 196, 516, 196, 492, 172, 492, 172, 524, 156, 524, 156, 548, 180, 548, 188, 552, 204, 548, 204, 556, 68, 556, 68, 488, 76, 492, 76, 532, 92, 532, 92, 548, 116, 548, 116, 524, 100, 524, 100, 492, 96, 484, 116, 484, 116, 460, 96, 460, 84, 452, 68, 460, -124, 460, -124, 444, -108, 448, -92, 436, 68, 436, 68, 412, 36, 412, 36, 396, 4, 396, 4, 356, 36, 356, 36, 340, 68, 340, 68, 316, -100, 316, -100, 336, -112, 332, -124, 336, -124, 292, -88, 292, -92, 304, -84, 312, -60, 312, -52, 304, -56, 292, -24, 292, -28, 304, -20, 312, 4, 312, 12, 304 ), PoolVector2Array( 228, 484, 228, 444, 156, 444, 156, 484 ), PoolVector2Array( 140, 348, 140, 372, 164, 372, 164, 356, 180, 356, 180, 332, 156, 332, 156, 348 ), PoolVector2Array( 92, 332, 92, 356, 116, 356, 116, 332 ), PoolVector2Array( 124, 528, 124, 504, 148, 504, 148, 528 ), PoolVector2Array( 92, 452, 92, 432, 116, 432, 116, 452 ), PoolVector2Array( 236, 444, 236, 468, 260, 468, 260, 444 ) ]
+
+[node name="Room1" instance=ExtResource( 1 )]
+
+[node name="PlayerStart" parent="RoomProperties" index="0"]
+position = Vector2( 64, 247 )
+
+[node name="EntranceCollision" parent="NavigationController" index="0"]
+position = Vector2( 64, 220 )
+
+[node name="Floor" parent="NavigationController" index="1"]
+tile_data = PoolIntArray( 917507, 1, 458760, 917508, 1, 458760, 983043, 1, 458760, 983044, 1, 458760, 1048579, 1, 458760, 1048580, 1, 458760, 1114115, 1, 458760, 1114116, 1, 458760, 1245176, 1, 458760, 1245177, 1, 458760, 1245178, 1, 458760, 1245179, 1, 458760, 1245180, 1, 458760, 1245181, 1, 458760, 1245182, 1, 458760, 1245183, 1, 458760, 1179648, 1, 458760, 1179649, 1, 458760, 1179650, 1, 458760, 1179651, 1, 458760, 1179652, 1, 458760, 1179653, 1, 458760, 1179654, 1, 458760, 1179655, 1, 458760, 1179656, 1, 458760, 1179657, 1, 458760, 1179658, 1, 458760, 1179659, 1, 458760, 1179660, 1, 458760, 1179661, 1, 458760, 1179662, 1, 458760, 1179663, 1, 458760, 1179664, 1, 458760, 1179665, 1, 458760, 1310712, 1, 458760, 1310713, 1, 131076, 1310714, 1, 131076, 1310715, 1, 131076, 1310716, 1, 131076, 1310717, 1, 131079, 1310718, 1, 131076, 1310719, 1, 131076, 1245184, 1, 131076, 1245185, 1, 131076, 1245186, 1, 131076, 1245187, 1, 131079, 1245188, 1, 131076, 1245189, 1, 131076, 1245190, 1, 131076, 1245191, 1, 131076, 1245192, 1, 131076, 1245193, 1, 131076, 1245194, 1, 131076, 1245195, 1, 131076, 1245196, 1, 131076, 1245197, 1, 131076, 1245198, 1, 131076, 1245199, 1, 131076, 1245200, 1, 131076, 1245201, 1, 458760, 1376248, 1, 458760, 1376249, 1, 131076, 1376250, 0, 131077, 1376251, 0, 131077, 1376252, 0, 131077, 1376253, 0, 131077, 1376254, 0, 131077, 1376255, 0, 131077, 1310720, 0, 131077, 1310721, 0, 131077, 1310722, 0, 131077, 1310723, 0, 131077, 1310724, 0, 131077, 1310725, 0, 65541, 1310726, 0, 131077, 1310727, 0, 131077, 1310728, 1, 131076, 1310729, 0, 131077, 1310730, 0, 65541, 1310731, 0, 131077, 1310732, 0, 131077, 1310733, 0, 65541, 1310734, 0, 131077, 1310735, 1, 131076, 1310736, 1, 131076, 1310737, 1, 458760, 1441784, 1, 458760, 1441785, 1, 131076, 1441786, 0, 131077, 1441787, 0, 131077, 1441788, 0, 65541, 1441789, 0, 131077, 1441790, 0, 65541, 1441791, 0, 131077, 1376256, 0, 131077, 1376257, 0, 131077, 1376258, 0, 131077, 1376259, 0, 65541, 1376260, 0, 131077, 1376261, 0, 131077, 1376262, 0, 131077, 1376263, 1, 131075, 1376264, 1, 131075, 1376265, 1, 131076, 1376266, 0, 131077, 1376267, 0, 131077, 1376268, 1, 131076, 1376269, 0, 131077, 1376270, 1, 131076, 1376271, 0, 131077, 1376272, 1, 131076, 1376273, 1, 458760, 1507320, 1, 458760, 1507321, 1, 131079, 1507322, 0, 131077, 1507323, 0, 131077, 1507324, 0, 131077, 1507325, 0, 131077, 1507326, 0, 65541, 1507327, 0, 131077, 1441792, 0, 131077, 1441793, 0, 131077, 1441794, 0, 131077, 1441795, 0, 65541, 1441796, 0, 131077, 1441797, 0, 131077, 1441798, 1, 131075, 1441799, 0, 65541, 1441800, 0, 131076, 1441801, 0, 131077, 1441802, 1, 131079, 1441803, 1, 131076, 1441804, 0, 131077, 1441805, 1, 131076, 1441806, 0, 131077, 1441807, 0, 131077, 1441808, 1, 131076, 1441809, 1, 458760, 1572856, 1, 458760, 1572857, 1, 131076, 1572858, 0, 131077, 1572859, 0, 131077, 1572860, 0, 131077, 1572861, 0, 131077, 1572862, 0, 131077, 1572863, 0, 131077, 1507328, 0, 131077, 1507329, 0, 131077, 1507330, 0, 131077, 1507331, 0, 131077, 1507332, 0, 131077, 1507333, 1, 131075, 1507334, 0, 131076, 1507335, 0, 131076, 1507336, 0, 131074, 1507337, 1, 131076, 1507338, 0, 131075, 1507339, 0, 131076, 1507340, 0, 131074, 1507341, 1, 131076, 1507342, 0, 131077, 1507343, 0, 65541, 1507344, 1, 131076, 1507345, 1, 458760, 1638392, 1, 458760, 1638393, 1, 131076, 1638394, 0, 131077, 1638395, 0, 131077, 1638396, 0, 131077, 1638397, 0, 131077, 1638398, 0, 131077, 1638399, 0, 65541, 1572864, 0, 131077, 1572865, 0, 131077, 1572866, 0, 131077, 1572867, 0, 131077, 1572868, 0, 131077, 1572869, 1, 131075, 1572870, 1, 131075, 1572871, -1610612736, 131078, 1572872, 1, 131075, 1572873, 0, 131077, 1572874, 1, 131076, 1572875, 0, 131078, 1572876, 0, 131076, 1572877, 1, 131079, 1572878, 0, 65541, 1572879, 0, 131077, 1572880, 1, 131076, 1572881, 1, 458760, 1703928, 1, 458760, 1703929, 1, 131076, 1703930, 0, 131077, 1703931, 0, 65541, 1703932, 0, 131077, 1703933, 0, 65541, 1703934, 0, 131077, 1703935, 0, 131077, 1638400, 0, 131077, 1638401, 0, 131077, 1638402, 0, 131077, 1638403, 0, 131077, 1638404, 0, 131077, 1638405, 1, 131075, 1638406, 1, 131075, 1638407, 1, 131076, 1638408, 0, 3, 1638409, 1, 131076, 1638410, 0, 3, 1638411, 1, 131076, 1638412, 1, 131076, 1638413, 1, 131076, 1638414, 0, 131077, 1638415, 0, 131077, 1638416, 1, 131079, 1638417, 1, 458760, 1769464, 1, 458760, 1769465, 1, 131076, 1769466, 0, 131077, 1769467, 0, 131077, 1769468, 0, 131077, 1769469, 0, 131077, 1769470, 0, 131077, 1769471, 0, 131077, 1703936, 0, 131077, 1703937, 0, 131077, 1703938, 0, 131077, 1703939, 0, 131077, 1703940, 0, 131077, 1703941, 0, 131077, 1703942, 0, 131077, 1703943, 1, 131075, 1703944, 1, 131075, 1703945, 0, 131077, 1703946, 1, 131076, 1703947, 1, 131076, 1703948, 0, 131077, 1703949, 0, 131077, 1703950, 1, 131076, 1703951, 0, 131077, 1703952, 1, 131076, 1703953, 1, 458760, 1835000, 1, 458760, 1835001, 1, 131076, 1835002, 1, 131076, 1835003, 1, 131076, 1835004, 1, 131076, 1835005, 1, 131079, 1835006, 1, 131076, 1835007, 1, 131076, 1769472, 1, 131076, 1769473, 1, 131079, 1769474, 1, 131076, 1769475, 1, 131076, 1769476, 1, 131076, 1769477, 1, 131076, 1769478, 0, 131077, 1769479, 0, 65541, 1769480, 0, 131077, 1769481, 0, 65541, 1769482, 0, 131077, 1769483, 0, 65541, 1769484, 0, 131077, 1769485, 0, 131077, 1769486, 0, 131077, 1769487, 1, 131076, 1769488, 1, 131076, 1769489, 1, 458760, 1900536, 1, 458760, 1900537, 1, 458760, 1900538, 1, 458760, 1900539, 1, 458760, 1900540, 1, 458760, 1900541, 1, 458760, 1900542, 1, 458760, 1900543, 1, 458760, 1835008, 1, 458760, 1835009, 1, 458760, 1835010, 1, 458760, 1835011, 1, 458760, 1835012, 1, 458760, 1835013, 1, 131076, 1835014, 0, 131077, 1835015, 0, 131077, 1835016, 0, 131077, 1835017, 0, 131077, 1835018, 0, 65541, 1835019, 0, 131077, 1835020, 0, 65541, 1835021, 0, 131077, 1835022, 0, 131077, 1835023, 0, 131077, 1835024, 1, 131076, 1835025, 1, 458760, 1900548, 1, 458760, 1900549, 1, 131076, 1900550, 0, 131077, 1900551, 0, 131077, 1900552, 0, 131077, 1900553, 0, 131077, 1900554, 0, 131077, 1900555, 0, 131077, 1900556, 0, 131077, 1900557, 0, 131077, 1900558, 1, 131076, 1900559, 1, 131076, 1900560, 1, 131076, 1900561, 1, 458760, 1966084, 1, 458760, 1966085, 1, 131076, 1966086, 1, 131076, 1966087, 0, 131077, 1966088, 0, 131077, 1966089, 0, 131077, 1966090, 1, 131076, 1966091, 1, 131076, 1966092, 1, 131076, 1966093, 1, 131076, 1966094, 1, 131076, 1966095, 1, 458760, 1966096, 1, 458760, 1966097, 1, 458760, 2031620, 1, 458760, 2031621, 0, 131077, 2031622, 1, 131076, 2031623, 0, 131077, 2031624, 0, 131077, 2031625, 0, 131077, 2031626, 1, 131076, 2031627, 0, 131077, 2031628, 1, 458760, 2031629, 1, 458760, 2031630, 1, 458760, 2031631, 1, 458760, 2031632, 1, 458760, 2031633, 1, 458760, 2097156, 1, 458760, 2097157, 0, 131077, 2097158, 1, 131076, 2097159, 0, 131077, 2097160, 0, 131077, 2097161, 0, 131077, 2097162, 1, 131076, 2097163, 0, 131077, 2097164, 1, 458760, 2162692, 1, 458760, 2162693, 1, 131076, 2162694, 0, 131077, 2162695, 0, 131077, 2162696, 0, 131077, 2162697, 0, 131077, 2162698, 0, 131077, 2162699, 1, 131076, 2162700, 1, 458760, 2228228, 1, 458760, 2228229, 1, 458760, 2228230, 1, 458760, 2228231, 1, 458760, 2228232, 1, 458760, 2228233, 1, 458760, 2228234, 1, 458760, 2228235, 1, 458760, 2228236, 1, 458760 )
+
+[node name="Walls" parent="NavigationController" index="2"]
+tile_data = PoolIntArray( 1114103, 0, 3, 1114104, 0, 131076, 1114105, 0, 131076, 1114106, 0, 131076, 1114107, 0, 131076, 1114108, 0, 131076, 1114109, 0, 131076, 1114110, 0, 131076, 1114111, 0, 131076, 1048576, 0, 131076, 1048577, 0, 131076, 1048582, 0, 131076, 1048583, 0, 131076, 1048584, 0, 131076, 1048585, 0, 131076, 1048586, 0, 131076, 1048587, 0, 131076, 1048590, 0, 131076, 1048591, 0, 131076, 1048592, 0, 131076, 1048593, 0, 131076, 1048594, 0, 2, 1179640, 0, 6, 1179641, 0, 7, 1179642, 0, 65541, 1179643, 0, 7, 1179644, 0, 65542, 1179645, 0, 65542, 1179646, 0, 65542, 1179647, 0, 7, 1114112, 0, 6, 1114113, 0, 7, 1114114, 0, 7, 1114117, 0, 7, 1114118, 0, 65541, 1114119, 0, 7, 1114120, 0, 6, 1114121, 0, 7, 1114122, 0, 65543, 1114123, 536870912, 65541, 1114126, 0, 6, 1114127, 0, 7, 1114128, 0, 7, 1114129, 0, 7 )
+
+[node name="SideBottomWalls" parent="NavigationController" index="3"]
+tile_data = PoolIntArray( 917506, 0, 65539, 917509, 0, 65538, 983042, 0, 65539, 983045, 0, 65538, 1048578, 0, 196612, 1048581, 0, 196608, 1179639, 0, 65539, 1114130, 0, 65538, 1245175, 0, 131075, 1179666, 0, 131074, 1310711, 0, 65539, 1245202, 0, 65538, 1376247, 0, 131075, 1310738, 0, 131074, 1441783, 0, 65539, 1376274, 0, 65538, 1507319, 0, 131075, 1441810, 0, 131074, 1572855, 0, 65539, 1507346, 0, 65538, 1638391, 0, 131075, 1572882, 0, 65538, 1703927, 0, 65539, 1638418, 0, 65538, 1769463, 0, 131075, 1703954, 0, 131074, 1834999, 0, 65539, 1769490, 0, 65538, 1900535, 0, 65539, 1835026, 0, 131074, 1966072, 1073741824, 131072, 1966073, 1073741824, 196609, 1966074, 1073741824, 196609, 1966075, 1073741824, 131072, 1966076, 1073741824, 196609, 1966077, 1073741824, 131072, 1966078, 1073741824, 131072, 1966079, 1073741824, 131072, 1900544, 1073741824, 131072, 1900545, 1073741824, 196609, 1900546, 1073741824, 131072, 1900547, 1073741824, 196612, 1900562, 0, 131074, 1966083, 0, 65539, 1966098, 0, 131074, 2031619, 0, 65539, 2031634, 0, 131074, 2097155, 0, 65539, 2097165, 1073741824, 196608, 2097166, 1073741824, 196609, 2097167, 1073741824, 131072, 2097168, 1073741824, 131072, 2097169, 1073741824, 196609, 2162691, 0, 65539, 2162701, 0, 65538, 2228227, 0, 65539, 2228237, 0, 65538, 2293764, 1073741824, 196609, 2293765, 1073741824, 131072, 2293766, 1073741824, 131072, 2293767, 1073741824, 196609, 2293768, 1073741824, 131072, 2293769, 1073741824, 131072, 2293770, 1073741824, 131072, 2293771, 1073741824, 196609, 2293772, 1073741824, 196609 )
+
+[node name="Navigation" parent="NavigationController" index="4"]
+navpoly = SubResource( 1 )
+
+[node name="SpawnLocations" parent="NavigationController" index="5"]
+tile_data = PoolIntArray( 1245176, 0, 0, 1245177, 0, 0, 1245181, 0, 0, 1179649, 0, 0, 1179650, 0, 0, 1179651, 0, 0, 1179652, 0, 0, 1179653, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 0, 0, 1179664, 0, 0, 1179665, 0, 0, 1310712, 0, 0, 1310713, 0, 0, 1310717, 0, 0, 1245185, 0, 0, 1245186, 0, 0, 1245187, 0, 0, 1245188, 0, 0, 1245189, 0, 0, 1245193, 0, 0, 1245194, 0, 0, 1245195, 0, 0, 1245196, 0, 0, 1376248, 0, 0, 1376249, 0, 0, 1310724, 0, 0, 1310725, 0, 0, 1310726, 0, 0, 1310727, 0, 0, 1310728, 0, 0, 1310729, 0, 0, 1310730, 0, 0, 1310731, 0, 0, 1310732, 0, 0, 1310733, 0, 0, 1310734, 0, 0, 1310735, 0, 0, 1376258, 0, 0, 1376259, 0, 0, 1376260, 0, 0, 1376261, 0, 0, 1376263, 0, 0, 1376264, 0, 0, 1376265, 0, 0, 1376267, 0, 0, 1376268, 0, 0, 1376270, 0, 0, 1376272, 0, 0, 1376273, 0, 0, 1441792, 0, 0, 1441793, 0, 0, 1441794, 0, 0, 1441795, 0, 0, 1441796, 0, 0, 1441797, 0, 0, 1441798, 0, 0, 1441799, 0, 0, 1441800, 0, 0, 1441802, 0, 0, 1441803, 0, 0, 1441805, 0, 0, 1441808, 0, 0, 1441809, 0, 0, 1507328, 0, 0, 1507329, 0, 0, 1507330, 0, 0, 1507331, 0, 0, 1507332, 0, 0, 1507333, 0, 0, 1507334, 0, 0, 1507335, 0, 0, 1507336, 0, 0, 1507337, 0, 0, 1507338, 0, 0, 1507339, 0, 0, 1507340, 0, 0, 1507341, 0, 0, 1507344, 0, 0, 1507345, 0, 0, 1572864, 0, 0, 1572865, 0, 0, 1572866, 0, 0, 1572867, 0, 0, 1572868, 0, 0, 1572869, 0, 0, 1572870, 0, 0, 1572871, 0, 0, 1572872, 0, 0, 1572873, 0, 0, 1572874, 0, 0, 1572875, 0, 0, 1572876, 0, 0, 1572877, 0, 0, 1572880, 0, 0, 1572881, 0, 0, 1638402, 0, 0, 1638403, 0, 0, 1638404, 0, 0, 1638405, 0, 0, 1638406, 0, 0, 1638407, 0, 0, 1638408, 0, 0, 1638409, 0, 0, 1638410, 0, 0, 1638411, 0, 0, 1638412, 0, 0, 1638413, 0, 0, 1703940, 0, 0, 1703941, 0, 0, 1703942, 0, 0, 1703943, 0, 0, 1703944, 0, 0, 1703945, 0, 0, 1703946, 0, 0, 1703947, 0, 0, 1703948, 0, 0, 1703949, 0, 0, 1703950, 0, 0, 1703951, 0, 0, 1835002, 0, 0, 1835003, 0, 0, 1835004, 0, 0, 1835005, 0, 0, 1835006, 0, 0, 1835007, 0, 0, 1769472, 0, 0, 1769473, 0, 0, 1769474, 0, 0, 1769475, 0, 0, 1769476, 0, 0, 1769477, 0, 0, 1769479, 0, 0, 1769480, 0, 0, 1769481, 0, 0, 1769482, 0, 0, 1769483, 0, 0, 1769484, 0, 0, 1769485, 0, 0, 1769486, 0, 0, 1769487, 0, 0, 1900536, 0, 0, 1900537, 0, 0, 1900538, 0, 0, 1900539, 0, 0, 1900540, 0, 0, 1900541, 0, 0, 1900542, 0, 0, 1900543, 0, 0, 1835008, 0, 0, 1835009, 0, 0, 1835010, 0, 0, 1835011, 0, 0, 1835014, 0, 0, 1835015, 0, 0, 1835016, 0, 0, 1835017, 0, 0, 1835022, 0, 0, 1835024, 0, 0, 1835025, 0, 0, 1900551, 0, 0, 1900552, 0, 0, 1900553, 0, 0, 1900558, 0, 0, 1900559, 0, 0, 1900560, 0, 0, 1900561, 0, 0, 1966086, 0, 0, 1966087, 0, 0, 1966088, 0, 0, 1966089, 0, 0, 1966090, 0, 0, 1966091, 0, 0, 1966092, 0, 0, 1966093, 0, 0, 1966094, 0, 0, 1966095, 0, 0, 1966096, 0, 0, 2031620, 0, 0, 2031622, 0, 0, 2031623, 0, 0, 2031625, 0, 0, 2031626, 0, 0, 2031628, 0, 0, 2031629, 0, 0, 2031630, 0, 0, 2031631, 0, 0, 2097156, 0, 0, 2097159, 0, 0, 2097161, 0, 0, 2097162, 0, 0, 2162692, 0, 0, 2162693, 0, 0, 2162695, 0, 0, 2162696, 0, 0, 2162697, 0, 0, 2228228, 0, 0, 2228229, 0, 0, 2228230, 0, 0, 2228231, 0, 0, 2228232, 0, 0, 2228233, 0, 0, 2228234, 0, 0 )
+
+[node name="SideWallLight" parent="NavigationController/Lights" index="0" instance=ExtResource( 10 )]
+position = Vector2( -121, 368 )
+
+[node name="Light2D" parent="NavigationController/Lights/SideWallLight" index="0"]
+texture_scale = 2.81
+shadow_buffer_size = 2048
+shadow_filter = 5
+
+[node name="AnimatedSprite" parent="NavigationController/Lights/SideWallLight" index="1"]
+frame = 0
+
+[node name="SideWallLight2" parent="NavigationController/Lights" index="1" instance=ExtResource( 10 )]
+position = Vector2( 281, 374 )
+scale = Vector2( -1, 1 )
+
+[node name="Light2D" parent="NavigationController/Lights/SideWallLight2" index="0"]
+texture_scale = 1.62
+shadow_buffer_size = 2048
+shadow_filter = 5
+
+[node name="AnimatedSprite" parent="NavigationController/Lights/SideWallLight2" index="1"]
+frame = 0
+
+[node name="SideWallLight3" parent="NavigationController/Lights" index="2" instance=ExtResource( 10 )]
+position = Vector2( 282, 478 )
+scale = Vector2( -1, 1 )
+
+[node name="Light2D" parent="NavigationController/Lights/SideWallLight3" index="0"]
+texture_scale = 1.62
+shadow_buffer_size = 2048
+shadow_filter = 5
+
+[node name="AnimatedSprite" parent="NavigationController/Lights/SideWallLight3" index="1"]
+frame = 0
+
+[node name="Campfire" parent="NavigationController/Lights" index="3" instance=ExtResource( 8 )]
+position = Vector2( 152, 390 )
+
+[node name="Light2D" parent="NavigationController/Lights/Campfire" index="0"]
+texture_scale = 10.0
+shadow_buffer_size = 2048
+shadow_filter = 5
+
+[node name="FrontWallLight" parent="NavigationController/Lights" index="4" instance=ExtResource( 9 )]
+position = Vector2( 40, 278 )
+
+[node name="Light2D" parent="NavigationController/Lights/FrontWallLight" index="0"]
+texture_scale = 2.0
+shadow_buffer_size = 2048
+shadow_filter = 5
+
+[node name="AnimatedSprite" parent="NavigationController/Lights/FrontWallLight" index="1"]
+frame = 0
+
+[node name="FrontWallLight2" parent="NavigationController/Lights" index="5" instance=ExtResource( 9 )]
+position = Vector2( 90, 278 )
+
+[node name="Light2D" parent="NavigationController/Lights/FrontWallLight2" index="0"]
+texture_scale = 2.0
+shadow_buffer_size = 2048
+shadow_filter = 5
+
+[node name="AnimatedSprite" parent="NavigationController/Lights/FrontWallLight2" index="1"]
+frame = 0
+
+[node name="DoorExit" parent="NavigationController/Doors" index="0"]
+position = Vector2( 208, 272 )
+
+[node name="DoorEntrance" parent="NavigationController/Doors" index="1"]
+position = Vector2( 64, 272 )
+FLIP_ENTRY = true
+
+[node name="FlameThrowers" type="YSort" parent="NavigationController/Traps" index="0"]
+
+[node name="LeftSection" type="YSort" parent="NavigationController/Traps/FlameThrowers" index="0"]
+
+[node name="FlameThrower8" parent="NavigationController/Traps/FlameThrowers/LeftSection" index="0" instance=ExtResource( 5 )]
+position = Vector2( 69, 472 )
+rotation = -1.5708
+
+[node name="FlameThrower5" parent="NavigationController/Traps/FlameThrowers/LeftSection" index="1" instance=ExtResource( 5 )]
+position = Vector2( -123, 430 )
+rotation = -1.5708
+
+[node name="FlameThrower6" parent="NavigationController/Traps/FlameThrowers/LeftSection" index="2" instance=ExtResource( 5 )]
+position = Vector2( -123, 390 )
+rotation = -1.5708
+
+[node name="FlameThrower7" parent="NavigationController/Traps/FlameThrowers/LeftSection" index="3" instance=ExtResource( 5 )]
+position = Vector2( -123, 350 )
+rotation = -1.5708
+
+[node name="TopSection" type="YSort" parent="NavigationController/Traps/FlameThrowers" index="1"]
+
+[node name="FlameThrower2" parent="NavigationController/Traps/FlameThrowers/TopSection" index="0" instance=ExtResource( 5 )]
+position = Vector2( -72, 288 )
+
+[node name="FlameThrower" parent="NavigationController/Traps/FlameThrowers/TopSection" index="1" instance=ExtResource( 5 )]
+position = Vector2( -8, 288 )
+
+[node name="FlameThrower3" parent="NavigationController/Traps/FlameThrowers/TopSection" index="2" instance=ExtResource( 5 )]
+position = Vector2( 120, 288 )
+
+[node name="FlameThrower4" parent="NavigationController/Traps/FlameThrowers/TopSection" index="3" instance=ExtResource( 5 )]
+position = Vector2( 232, 287 )
+
+[node name="RightSection" type="YSort" parent="NavigationController/Traps/FlameThrowers" index="2"]
+
+[node name="FlameThrower5" parent="NavigationController/Traps/FlameThrowers/RightSection" index="0" instance=ExtResource( 5 )]
+position = Vector2( 283, 318 )
+rotation = 1.5708
+
+[node name="FlameThrower6" parent="NavigationController/Traps/FlameThrowers/RightSection" index="1" instance=ExtResource( 5 )]
+position = Vector2( 283, 424 )
+rotation = 1.5708
+
+[node name="FlameThrower7" parent="NavigationController/Traps/FlameThrowers/RightSection" index="2" instance=ExtResource( 5 )]
+position = Vector2( 203, 533 )
+rotation = 1.5708
+
+[node name="Spikes" type="YSort" parent="NavigationController/Traps" index="1"]
+
+[node name="LeftMiddleSection" type="YSort" parent="NavigationController/Traps/Spikes" index="0"]
+
+[node name="Big Chunk" type="YSort" parent="NavigationController/Traps/Spikes/LeftMiddleSection" index="0"]
+
+[node name="ThreeRows" type="YSort" parent="NavigationController/Traps/Spikes/LeftMiddleSection/Big Chunk" index="0"]
+
+[node name="BigSpikes" parent="NavigationController/Traps/Spikes/LeftMiddleSection/Big Chunk/ThreeRows" index="0" instance=ExtResource( 3 )]
+position = Vector2( -80, 416 )
+
+[node name="BigSpikes2" parent="NavigationController/Traps/Spikes/LeftMiddleSection/Big Chunk/ThreeRows" index="1" instance=ExtResource( 3 )]
+position = Vector2( -80, 376 )
+
+[node name="BigSpikes3" parent="NavigationController/Traps/Spikes/LeftMiddleSection/Big Chunk/ThreeRows" index="2" instance=ExtResource( 3 )]
+position = Vector2( -80, 336 )
+
+[node name="ThreeRows2" type="YSort" parent="NavigationController/Traps/Spikes/LeftMiddleSection/Big Chunk" index="1"]
+position = Vector2( 32, 0 )
+
+[node name="BigSpikes" parent="NavigationController/Traps/Spikes/LeftMiddleSection/Big Chunk/ThreeRows2" index="0" instance=ExtResource( 3 )]
+position = Vector2( -80, 416 )
+
+[node name="BigSpikes2" parent="NavigationController/Traps/Spikes/LeftMiddleSection/Big Chunk/ThreeRows2" index="1" instance=ExtResource( 3 )]
+position = Vector2( -80, 376 )
+
+[node name="BigSpikes3" parent="NavigationController/Traps/Spikes/LeftMiddleSection/Big Chunk/ThreeRows2" index="2" instance=ExtResource( 3 )]
+position = Vector2( -80, 336 )
+
+[node name="ThreeRows3" type="YSort" parent="NavigationController/Traps/Spikes/LeftMiddleSection/Big Chunk" index="2"]
+position = Vector2( 64, 0 )
+
+[node name="BigSpikes" parent="NavigationController/Traps/Spikes/LeftMiddleSection/Big Chunk/ThreeRows3" index="0" instance=ExtResource( 3 )]
+position = Vector2( -80, 416 )
+
+[node name="BigSpikes2" parent="NavigationController/Traps/Spikes/LeftMiddleSection/Big Chunk/ThreeRows3" index="1" instance=ExtResource( 3 )]
+position = Vector2( -80, 376 )
+
+[node name="BigSpikes3" parent="NavigationController/Traps/Spikes/LeftMiddleSection/Big Chunk/ThreeRows3" index="2" instance=ExtResource( 3 )]
+position = Vector2( -80, 336 )
+
+[node name="Middle" type="YSort" parent="NavigationController/Traps/Spikes/LeftMiddleSection" index="1"]
+
+[node name="BigSpikes" parent="NavigationController/Traps/Spikes/LeftMiddleSection/Middle" index="0" instance=ExtResource( 3 )]
+position = Vector2( 16, 416 )
+
+[node name="BigSpikes2" parent="NavigationController/Traps/Spikes/LeftMiddleSection/Middle" index="1" instance=ExtResource( 3 )]
+position = Vector2( 16, 336 )
+
+[node name="SmallSpikes" parent="NavigationController/Traps/Spikes/LeftMiddleSection/Middle" index="2" instance=ExtResource( 4 )]
+position = Vector2( 40, 328 )
+
+[node name="SmallSpikes2" parent="NavigationController/Traps/Spikes/LeftMiddleSection/Middle" index="3" instance=ExtResource( 4 )]
+position = Vector2( 56, 328 )
+
+[node name="SmallSpikes3" parent="NavigationController/Traps/Spikes/LeftMiddleSection/Middle" index="4" instance=ExtResource( 4 )]
+position = Vector2( 40, 424 )
+
+[node name="SmallSpikes4" parent="NavigationController/Traps/Spikes/LeftMiddleSection/Middle" index="5" instance=ExtResource( 4 )]
+position = Vector2( 56, 424 )
+
+[node name="BottomSection" type="YSort" parent="NavigationController/Traps/Spikes" index="1"]
+
+[node name="SmallSpikes" parent="NavigationController/Traps/Spikes/BottomSection" index="0" instance=ExtResource( 4 )]
+position = Vector2( 104, 536 )
+
+[node name="SmallSpikes2" parent="NavigationController/Traps/Spikes/BottomSection" index="1" instance=ExtResource( 4 )]
+position = Vector2( 88, 520 )
+
+[node name="SmallSpikes3" parent="NavigationController/Traps/Spikes/BottomSection" index="2" instance=ExtResource( 4 )]
+position = Vector2( 88, 504 )
+
+[node name="SmallSpikes4" parent="NavigationController/Traps/Spikes/BottomSection" index="3" instance=ExtResource( 4 )]
+position = Vector2( 104, 472 )
+
+[node name="SmallSpikes5" parent="NavigationController/Traps/Spikes/BottomSection" index="4" instance=ExtResource( 4 )]
+position = Vector2( 168, 536 )
+
+[node name="SmallSpikes6" parent="NavigationController/Traps/Spikes/BottomSection" index="5" instance=ExtResource( 4 )]
+position = Vector2( 184, 520 )
+
+[node name="SmallSpikes7" parent="NavigationController/Traps/Spikes/BottomSection" index="6" instance=ExtResource( 4 )]
+position = Vector2( 184, 504 )
+
+[node name="SmallSpikes8" parent="NavigationController/Traps/Spikes/BottomSection" index="7" instance=ExtResource( 4 )]
+position = Vector2( 184, 504 )
+
+[node name="SmallSpikes9" parent="NavigationController/Traps/Spikes/BottomSection" index="8" instance=ExtResource( 4 )]
+position = Vector2( 184, 504 )
+
+[node name="BigSpikes" parent="NavigationController/Traps/Spikes/BottomSection" index="9" instance=ExtResource( 3 )]
+position = Vector2( 176, 464 )
+
+[node name="BigSpikes2" parent="NavigationController/Traps/Spikes/BottomSection" index="10" instance=ExtResource( 3 )]
+position = Vector2( 208, 464 )
+
+[node name="RightMiddleSection" type="YSort" parent="NavigationController/Traps/Spikes" index="2"]
+
+[node name="BigSpikes" parent="NavigationController/Traps/Spikes/RightMiddleSection" index="0" instance=ExtResource( 3 )]
+position = Vector2( 240, 400 )
+
+[node name="BigSpikes2" parent="NavigationController/Traps/Spikes/RightMiddleSection" index="1" instance=ExtResource( 3 )]
+position = Vector2( 240, 368 )
+
+[node name="SmallSpikes" parent="NavigationController/Traps/Spikes/RightMiddleSection" index="2" instance=ExtResource( 4 )]
+position = Vector2( 200, 360 )
+
+[node name="SmallSpikes2" parent="NavigationController/Traps/Spikes/RightMiddleSection" index="3" instance=ExtResource( 4 )]
+position = Vector2( 216, 344 )
+
+[node name="SmallSpikes3" parent="NavigationController/Traps/Spikes/RightMiddleSection" index="4" instance=ExtResource( 4 )]
+position = Vector2( 152, 360 )
+
+[node name="SmallSpikes4" parent="NavigationController/Traps/Spikes/RightMiddleSection" index="5" instance=ExtResource( 4 )]
+position = Vector2( 168, 344 )
+
+[node name="Chest1" parent="NavigationController/Loot" index="0" instance=ExtResource( 2 )]
+position = Vector2( -40, 286 )
+
+[node name="Props" parent="NavigationController" index="10"]
+tile_data = PoolIntArray( 1179640, 8, 65536, 1179641, 8, 65537, 1179642, 7, 0, 1114112, 8, 65537, 1114115, 536870920, 1, 1114121, 6, 0, 1114122, 7, 0, 1114128, 7, 0, 1114129, 536870920, 0, 1245177, 1073741832, 2, 1179664, 8, 2, 1179665, 8, 3, 1310712, 1073741832, 2, 1310713, -536870904, 2, 1376249, -1073741816, 2, 1310733, 536870921, 0, 1376259, 536870921, 3, 1376261, 536870921, 2, 1441796, 536870921, 2, 1441799, 9, 4, 1507329, 536870921, 0, 1507336, 536870921, 4, 1638396, 536870919, 1, 1638404, 536870921, 0, 1835002, -1073741816, 2, 1769481, 536870921, 0, 1900536, -1073741816, 3, 1900537, -1073741816, 2, 1835015, 9, 1, 1966097, 1, 0, 2031632, 1, 0, 2031633, 1, 0, 2097158, 536870920, 65539, 2162696, 536870921, 1, 2228228, 8, 65538, 2228229, 536870920, 65538 )
+
+[node name="Tree" parent="NavigationController/Props1" index="0" instance=ExtResource( 6 )]
+position = Vector2( 136, 516 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Pillar5" parent="NavigationController/Props1" index="1" instance=ExtResource( 7 )]
+position = Vector2( 104, 442 )
+
+[node name="Pillar6" parent="NavigationController/Props1" index="2" instance=ExtResource( 7 )]
+position = Vector2( 249, 457 )
+
+[node name="Pillar7" parent="NavigationController/Props1" index="3" instance=ExtResource( 7 )]
+position = Vector2( 249, 345 )
+
+[node name="Pillar8" parent="NavigationController/Props1" index="4" instance=ExtResource( 7 )]
+position = Vector2( 104, 345 )
+
+[editable path="NavigationController/Lights/SideWallLight"]
+[editable path="NavigationController/Lights/SideWallLight2"]
+[editable path="NavigationController/Lights/SideWallLight3"]
+[editable path="NavigationController/Lights/Campfire"]
+[editable path="NavigationController/Lights/FrontWallLight"]
+[editable path="NavigationController/Lights/FrontWallLight2"]

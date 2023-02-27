@@ -1,0 +1,174 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Sound/SFX/Environment/Spikes/sword.6.ogg" type="AudioStream" id=1]
+[ext_resource path="res://World/Enviroment/Props/Traps/TriggerTrap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sound/SFX/Environment/Switches/switch9.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sound/SFX/Environment/Spikes/sword.9.ogg" type="AudioStream" id=4]
+[ext_resource path="res://World/Enviroment/Props/Traps/TriggerTrap.gd" type="Script" id=5]
+
+[sub_resource type="Animation" id=8]
+resource_name = "Disengaged"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../TriggerZone:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../Hitbox:monitorable")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "Trigger"
+length = 2.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.65, 0.7, 0.75, 0.8, 1.85, 1.9, 1.95, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 6, 4, 3, 2 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Hitbox:monitorable")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.75, 1.85 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../TriggerZone:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../SFX/Triggered:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../SFX/Engage:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../SFX/Retract:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 1.8 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="StreamTexture" id=12]
+load_path = "res://.import/spikes.png-191b06296428ea77af684530924c4922.stex"
+
+[sub_resource type="CircleShape2D" id=9]
+radius = 7.0
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 7, 7 )
+
+[node name="SmallSpikes" instance=ExtResource( 2 )]
+script = ExtResource( 5 )
+
+[node name="Triggered" parent="SFX" index="0"]
+stream = ExtResource( 3 )
+volume_db = 20.0
+pitch_scale = 0.4
+
+[node name="Retract" type="AudioStreamPlayer2D" parent="SFX" index="1"]
+stream = ExtResource( 1 )
+volume_db = -8.0
+pitch_scale = 0.8
+
+[node name="Engage" parent="SFX" index="2"]
+stream = ExtResource( 4 )
+
+[node name="AnimationPlayer" parent="." index="1"]
+anims/Disengaged = SubResource( 8 )
+anims/Trigger = SubResource( 1 )
+
+[node name="Sprite" parent="." index="2"]
+position = Vector2( 0, -2 )
+texture = SubResource( 12 )
+hframes = 10
+
+[node name="TriggerZone" parent="." index="3"]
+monitoring = false
+
+[node name="CollisionShape2D" parent="TriggerZone" index="0"]
+shape = SubResource( 9 )
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource( 4 )
+
+[node name="NavigationObstacle2D" parent="Hitbox" index="1"]
+radius = 10.0
+
+[connection signal="body_entered" from="TriggerZone" to="." method="_on_TriggerZone_body_entered"]
+
+[editable path="Hitbox"]

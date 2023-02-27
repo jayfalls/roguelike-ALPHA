@@ -1,0 +1,1074 @@
+[gd_scene load_steps=51 format=2]
+
+[ext_resource path="res://UI/Stats/hourglass.png" type="Texture" id=1]
+[ext_resource path="res://UI/Stats/shield.png" type="Texture" id=2]
+[ext_resource path="res://UI/Stats/health.png" type="Texture" id=3]
+[ext_resource path="res://UI/HUD.gd" type="Script" id=4]
+[ext_resource path="res://World/Enviroment/Items/coin.png" type="Texture" id=5]
+[ext_resource path="res://UI/Stats/CircularRing.png" type="Texture" id=6]
+[ext_resource path="res://World/Enviroment/Items/minerals.png" type="Texture" id=7]
+[ext_resource path="res://UI/Fonts/prstart.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://UI/Buttons & Indicators/PowerUpChoice_Group.tres" type="ButtonGroup" id=9]
+[ext_resource path="res://UI/Fonts/prstartk.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://UI/Stats/ultimate_greyed.png" type="Texture" id=11]
+[ext_resource path="res://UI/Stats/ultimate.png" type="Texture" id=12]
+[ext_resource path="res://UI/Overlays/arrow.png" type="Texture" id=13]
+[ext_resource path="res://UI/ChoiceWindow.gd" type="Script" id=14]
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 2 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.5
+} ]
+
+[sub_resource type="DynamicFont" id=26]
+size = 5
+extra_spacing_top = 1
+font_data = ExtResource( 8 )
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 3 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 3 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.5
+} ]
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 1 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=15]
+animations = [ {
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.5
+} ]
+
+[sub_resource type="DynamicFont" id=21]
+size = 8
+font_data = ExtResource( 8 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 5 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 5 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=20]
+animations = [ {
+"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=22]
+size = 8
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=29]
+bg_color = Color( 0.133333, 0.133333, 0.133333, 1 )
+border_width_left = 4
+border_width_top = 2
+border_width_right = 4
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id=31]
+bg_color = Color( 1, 1, 1, 0.27451 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id=32]
+bg_color = Color( 0.25098, 0.25098, 0.25098, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.368627, 0.356863, 0.94902, 1 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id=30]
+bg_color = Color( 1, 1, 1, 0.27451 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id=33]
+bg_color = Color( 0.196078, 0.196078, 0.196078, 1 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="DynamicFont" id=34]
+size = 10
+outline_size = 1
+extra_spacing_top = 2
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=35]
+size = 5
+font_data = ExtResource( 10 )
+
+[sub_resource type="StyleBoxFlat" id=36]
+bg_color = Color( 0.898039, 0.905882, 0.262745, 1 )
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id=37]
+bg_color = Color( 0.145098, 0.145098, 0.145098, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="Animation" id=27]
+resource_name = "Active"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("TopLeft/CurrencyUI:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TopRight/PlayerStatsUI/CenterContainer/ShieldContainer/ShieldSprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TopRight/PlayerStatsUI/CenterContainer/ShieldContainer/Node2D/Value:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("TopRight/PlayerStatsUI/GridContainer/HealthContainer/HealthSprite:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("TopRight/PlayerStatsUI/GridContainer/HealthContainer/Node2D/Value:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("TopRight/PlayerStatsUI/GridContainer/StaminaContainer/HourglassSprite:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("TopRight/PlayerStatsUI/GridContainer/StaminaContainer/Node2D/Value:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "FadeIn"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("TopLeft/CurrencyUI:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TopRight/PlayerStatsUI/CenterContainer/ShieldContainer/ShieldSprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TopRight/PlayerStatsUI/CenterContainer/ShieldContainer/Node2D/Value:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("TopRight/PlayerStatsUI/GridContainer/HealthContainer/HealthSprite:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("TopRight/PlayerStatsUI/GridContainer/HealthContainer/Node2D/Value:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("TopRight/PlayerStatsUI/GridContainer/StaminaContainer/HourglassSprite:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("TopRight/PlayerStatsUI/GridContainer/StaminaContainer/Node2D/Value:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "FadeOut"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("TopLeft/CurrencyUI:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TopRight/PlayerStatsUI/GridContainer/StaminaContainer/Node2D/Value:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TopRight/PlayerStatsUI/GridContainer/StaminaContainer/HourglassSprite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("TopRight/PlayerStatsUI/GridContainer/HealthContainer/Node2D/Value:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("TopRight/PlayerStatsUI/GridContainer/HealthContainer/HealthSprite:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("TopRight/PlayerStatsUI/CenterContainer/ShieldContainer/Node2D/Value:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("TopRight/PlayerStatsUI/CenterContainer/ShieldContainer/ShieldSprite:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "Inactive"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("TopLeft/CurrencyUI:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TopRight/PlayerStatsUI/GridContainer/StaminaContainer/Node2D/Value:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TopRight/PlayerStatsUI/GridContainer/StaminaContainer/HourglassSprite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("TopRight/PlayerStatsUI/GridContainer/HealthContainer/Node2D/Value:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("TopRight/PlayerStatsUI/GridContainer/HealthContainer/HealthSprite:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("TopRight/PlayerStatsUI/CenterContainer/ShieldContainer/Node2D/Value:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("TopRight/PlayerStatsUI/CenterContainer/ShieldContainer/ShieldSprite:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="HUD" type="Control"]
+margin_left = 10.0
+margin_top = 5.0
+margin_right = 470.0
+margin_bottom = 265.0
+size_flags_stretch_ratio = 0.0
+script = ExtResource( 4 )
+
+[node name="TopRight" type="AspectRatioContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -42.0
+margin_top = 11.0
+margin_right = -74.0
+margin_bottom = 28.0
+rect_scale = Vector2( 1.25, 1.25 )
+
+[node name="PlayerStatsUI" type="GridContainer" parent="TopRight"]
+margin_right = 34.0
+margin_bottom = 28.0
+columns = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="TopRight/PlayerStatsUI"]
+margin_right = 15.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 15, 28 )
+
+[node name="ShieldContainer" type="CenterContainer" parent="TopRight/PlayerStatsUI/CenterContainer"]
+unique_name_in_owner = true
+margin_top = 6.0
+margin_right = 15.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 15, 15 )
+
+[node name="ShieldRadial" type="TextureProgress" parent="TopRight/PlayerStatsUI/CenterContainer/ShieldContainer"]
+margin_right = 15.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 15, 15 )
+max_value = 10.0
+step = 0.1
+value = 8.0
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 6 )
+fill_mode = 5
+tint_under = Color( 0.243137, 0.243137, 0.243137, 0.894118 )
+tint_progress = Color( 0.0901961, 0.639216, 0.878431, 1 )
+nine_patch_stretch = true
+
+[node name="ShieldSprite" type="AnimatedSprite" parent="TopRight/PlayerStatsUI/CenterContainer/ShieldContainer"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 8, 7 )
+frames = SubResource( 10 )
+frame = 2
+playing = true
+
+[node name="ShieldTween" type="Tween" parent="TopRight/PlayerStatsUI/CenterContainer/ShieldContainer"]
+
+[node name="Node2D" type="Node2D" parent="TopRight/PlayerStatsUI/CenterContainer/ShieldContainer"]
+position = Vector2( 0.5, 1 )
+
+[node name="Value" type="Label" parent="TopRight/PlayerStatsUI/CenterContainer/ShieldContainer/Node2D"]
+margin_left = 1.0
+margin_top = 3.0
+margin_right = 13.0
+margin_bottom = 11.0
+custom_fonts/font = SubResource( 26 )
+text = "2"
+align = 1
+
+[node name="GridContainer" type="GridContainer" parent="TopRight/PlayerStatsUI"]
+margin_left = 19.0
+margin_right = 34.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 15, 24 )
+
+[node name="HealthContainer" type="CenterContainer" parent="TopRight/PlayerStatsUI/GridContainer"]
+unique_name_in_owner = true
+margin_right = 15.0
+margin_bottom = 6.0
+rect_min_size = Vector2( 0, 6 )
+use_top_left = true
+
+[node name="HealthRadial" type="TextureProgress" parent="TopRight/PlayerStatsUI/GridContainer/HealthContainer"]
+margin_left = -8.0
+margin_top = -8.0
+margin_right = 7.0
+margin_bottom = 7.0
+rect_min_size = Vector2( 15, 15 )
+max_value = 10.0
+step = 0.1
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 6 )
+fill_mode = 5
+tint_under = Color( 0.243137, 0.243137, 0.243137, 0.894118 )
+tint_progress = Color( 0.858824, 0.121569, 0.121569, 1 )
+nine_patch_stretch = true
+
+[node name="HealthSprite" type="AnimatedSprite" parent="TopRight/PlayerStatsUI/GridContainer/HealthContainer"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0, -1 )
+frames = SubResource( 5 )
+frame = 1
+playing = true
+
+[node name="HealthTween" type="Tween" parent="TopRight/PlayerStatsUI/GridContainer/HealthContainer"]
+
+[node name="Node2D" type="Node2D" parent="TopRight/PlayerStatsUI/GridContainer/HealthContainer"]
+position = Vector2( -5.5, -4 )
+
+[node name="Value" type="Label" parent="TopRight/PlayerStatsUI/GridContainer/HealthContainer/Node2D"]
+margin_left = -3.05176e-05
+margin_right = 9.99997
+margin_bottom = 7.0
+custom_fonts/font = SubResource( 26 )
+text = "8"
+align = 1
+valign = 1
+
+[node name="StaminaContainer" type="CenterContainer" parent="TopRight/PlayerStatsUI/GridContainer"]
+unique_name_in_owner = true
+margin_top = 10.0
+margin_right = 15.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 14, 5 )
+
+[node name="StaminaRadial" type="TextureProgress" parent="TopRight/PlayerStatsUI/GridContainer/StaminaContainer"]
+margin_right = 15.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 15, 15 )
+max_value = 10.0
+step = 0.1
+value = 8.0
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 6 )
+fill_mode = 5
+tint_under = Color( 0.243137, 0.243137, 0.243137, 0.894118 )
+tint_over = Color( 0.913725, 0.913725, 0.913725, 1 )
+tint_progress = Color( 0.0352941, 0.729412, 0.341176, 1 )
+nine_patch_stretch = true
+
+[node name="HourglassSprite" type="AnimatedSprite" parent="TopRight/PlayerStatsUI/GridContainer/StaminaContainer"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 8, 7 )
+frames = SubResource( 15 )
+playing = true
+
+[node name="StaminaTween" type="Tween" parent="TopRight/PlayerStatsUI/GridContainer/StaminaContainer"]
+
+[node name="Node2D" type="Node2D" parent="TopRight/PlayerStatsUI/GridContainer/StaminaContainer"]
+position = Vector2( 0.5, 1 )
+
+[node name="Value" type="Label" parent="TopRight/PlayerStatsUI/GridContainer/StaminaContainer/Node2D"]
+margin_left = 1.0
+margin_top = 3.0
+margin_right = 13.0
+margin_bottom = 11.0
+custom_fonts/font = SubResource( 26 )
+text = "12"
+align = 1
+
+[node name="TopLeft" type="AspectRatioContainer" parent="."]
+anchor_top = 0.025
+anchor_bottom = 0.025
+margin_right = 28.0
+margin_bottom = 30.0
+
+[node name="CurrencyUI" type="GridContainer" parent="TopLeft"]
+unique_name_in_owner = true
+margin_right = 28.0
+margin_bottom = 30.0
+
+[node name="PermaGems" type="GridContainer" parent="TopLeft/CurrencyUI"]
+margin_right = 28.0
+margin_bottom = 12.0
+columns = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="TopLeft/CurrencyUI/PermaGems"]
+margin_right = 16.0
+margin_bottom = 12.0
+
+[node name="Panel" type="Panel" parent="TopLeft/CurrencyUI/PermaGems/CenterContainer"]
+modulate = Color( 1, 1, 1, 0 )
+light_mask = 0
+margin_right = 16.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 16, 12 )
+
+[node name="Sprite" type="Sprite" parent="TopLeft/CurrencyUI/PermaGems/CenterContainer"]
+position = Vector2( 8, 4 )
+texture = ExtResource( 7 )
+hframes = 3
+vframes = 3
+frame = 6
+
+[node name="GemsValue" type="Label" parent="TopLeft/CurrencyUI/PermaGems"]
+unique_name_in_owner = true
+margin_left = 20.0
+margin_top = 2.0
+margin_right = 28.0
+margin_bottom = 10.0
+custom_fonts/font = SubResource( 21 )
+text = "0"
+
+[node name="Coins" type="GridContainer" parent="TopLeft/CurrencyUI"]
+margin_top = 16.0
+margin_right = 28.0
+margin_bottom = 30.0
+columns = 2
+
+[node name="CenterContainer2" type="CenterContainer" parent="TopLeft/CurrencyUI/Coins"]
+margin_right = 16.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 0, 14 )
+
+[node name="Panel" type="Panel" parent="TopLeft/CurrencyUI/Coins/CenterContainer2"]
+self_modulate = Color( 1, 1, 1, 0 )
+light_mask = 0
+margin_top = 1.0
+margin_right = 16.0
+margin_bottom = 13.0
+rect_min_size = Vector2( 16, 12 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="TopLeft/CurrencyUI/Coins/CenterContainer2"]
+position = Vector2( 8, 4 )
+scale = Vector2( 1.5, 1.5 )
+frames = SubResource( 20 )
+playing = true
+
+[node name="CoinsValue" type="Label" parent="TopLeft/CurrencyUI/Coins"]
+unique_name_in_owner = true
+margin_left = 20.0
+margin_top = 3.0
+margin_right = 28.0
+margin_bottom = 11.0
+custom_fonts/font = SubResource( 22 )
+text = "0"
+
+[node name="CurrencyTween" type="Tween" parent="TopLeft/CurrencyUI"]
+unique_name_in_owner = true
+
+[node name="Middle" type="AspectRatioContainer" parent="."]
+light_mask = 16
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -130.0
+margin_top = -105.0
+margin_right = 120.0
+margin_bottom = 105.0
+rect_min_size = Vector2( 260, 210 )
+ratio = 1.25
+
+[node name="ChoiceWindow" type="Panel" parent="Middle"]
+unique_name_in_owner = true
+visible = false
+light_mask = 16
+margin_top = 1.0
+margin_right = 260.0
+margin_bottom = 209.0
+grow_vertical = 2
+custom_styles/panel = SubResource( 29 )
+script = ExtResource( 14 )
+
+[node name="Choice1" type="Button" parent="Middle/ChoiceWindow"]
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 245.0
+margin_bottom = 70.0
+size_flags_vertical = 2
+custom_styles/hover = SubResource( 31 )
+custom_styles/pressed = SubResource( 32 )
+custom_styles/focus = SubResource( 30 )
+custom_styles/normal = SubResource( 33 )
+toggle_mode = true
+shortcut_in_tooltip = false
+action_mode = 0
+group = ExtResource( 9 )
+
+[node name="Heading" type="Label" parent="Middle/ChoiceWindow/Choice1"]
+margin_left = 5.0
+margin_right = 48.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0.854902, 0.0352941, 0.0352941, 1 )
+custom_colors/font_outline_modulate = Color( 0.219608, 0.219608, 0.219608, 1 )
+custom_fonts/font = SubResource( 34 )
+text = "Name"
+valign = 2
+
+[node name="Description" type="Label" parent="Middle/ChoiceWindow/Choice1"]
+margin_left = 8.0
+margin_top = 18.0
+margin_right = 222.0
+margin_bottom = 42.0
+custom_colors/font_color = Color( 0.603922, 0.603922, 0.603922, 1 )
+custom_fonts/font = SubResource( 35 )
+text = "Release an explosion, dealing * points of damage and stacking any attack modifiers on top"
+autowrap = true
+
+[node name="Control" type="Control" parent="Middle/ChoiceWindow/Choice1"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Old Value" type="Label" parent="Middle/ChoiceWindow/Choice1/Control"]
+margin_left = 8.0
+margin_top = 46.0
+margin_right = 106.0
+margin_bottom = 52.0
+custom_colors/font_color = Color( 0.603922, 0.603922, 0.603922, 1 )
+custom_fonts/font = SubResource( 35 )
+text = "20 Points"
+align = 2
+autowrap = true
+
+[node name="TextureRect" type="TextureRect" parent="Middle/ChoiceWindow/Choice1/Control"]
+margin_left = 123.0
+margin_top = 40.0
+margin_right = 139.0
+margin_bottom = 56.0
+rect_rotation = 90.0
+texture = ExtResource( 13 )
+
+[node name="New Value" type="Label" parent="Middle/ChoiceWindow/Choice1/Control"]
+margin_left = 126.0
+margin_top = 46.0
+margin_right = 224.0
+margin_bottom = 52.0
+custom_colors/font_color = Color( 0.603922, 0.603922, 0.603922, 1 )
+custom_fonts/font = SubResource( 35 )
+text = "20 Points"
+autowrap = true
+
+[node name="Choice2" type="Button" parent="Middle/ChoiceWindow"]
+margin_left = 15.0
+margin_top = 75.0
+margin_right = 245.0
+margin_bottom = 130.0
+custom_styles/hover = SubResource( 31 )
+custom_styles/pressed = SubResource( 32 )
+custom_styles/focus = SubResource( 30 )
+custom_styles/normal = SubResource( 33 )
+toggle_mode = true
+shortcut_in_tooltip = false
+action_mode = 0
+group = ExtResource( 9 )
+
+[node name="Heading" type="Label" parent="Middle/ChoiceWindow/Choice2"]
+margin_left = 5.0
+margin_right = 48.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0.854902, 0.0352941, 0.0352941, 1 )
+custom_colors/font_outline_modulate = Color( 0.219608, 0.219608, 0.219608, 1 )
+custom_fonts/font = SubResource( 34 )
+text = "Name"
+valign = 2
+
+[node name="Description" type="Label" parent="Middle/ChoiceWindow/Choice2"]
+margin_left = 8.0
+margin_top = 18.0
+margin_right = 222.0
+margin_bottom = 42.0
+custom_colors/font_color = Color( 0.603922, 0.603922, 0.603922, 1 )
+custom_fonts/font = SubResource( 35 )
+text = "Release an explosion, dealing * points of damage and stacking any attack modifiers on top"
+autowrap = true
+
+[node name="Control2" type="Control" parent="Middle/ChoiceWindow/Choice2"]
+margin_top = -65.0
+margin_right = 40.0
+margin_bottom = -25.0
+
+[node name="Old Value" type="Label" parent="Middle/ChoiceWindow/Choice2/Control2"]
+margin_left = 8.0
+margin_top = 111.0
+margin_right = 106.0
+margin_bottom = 117.0
+custom_colors/font_color = Color( 0.603922, 0.603922, 0.603922, 1 )
+custom_fonts/font = SubResource( 35 )
+text = "20 Points"
+align = 2
+autowrap = true
+
+[node name="TextureRect" type="TextureRect" parent="Middle/ChoiceWindow/Choice2/Control2"]
+margin_left = 123.0
+margin_top = 105.0
+margin_right = 139.0
+margin_bottom = 121.0
+rect_rotation = 90.0
+texture = ExtResource( 13 )
+
+[node name="New Value" type="Label" parent="Middle/ChoiceWindow/Choice2/Control2"]
+margin_left = 126.0
+margin_top = 111.0
+margin_right = 224.0
+margin_bottom = 117.0
+custom_colors/font_color = Color( 0.603922, 0.603922, 0.603922, 1 )
+custom_fonts/font = SubResource( 35 )
+text = "20 Points"
+autowrap = true
+
+[node name="Choice3" type="Button" parent="Middle/ChoiceWindow"]
+margin_left = 15.0
+margin_top = 135.0
+margin_right = 245.0
+margin_bottom = 190.0
+custom_styles/hover = SubResource( 31 )
+custom_styles/pressed = SubResource( 32 )
+custom_styles/focus = SubResource( 30 )
+custom_styles/normal = SubResource( 33 )
+toggle_mode = true
+shortcut_in_tooltip = false
+action_mode = 0
+group = ExtResource( 9 )
+
+[node name="Heading" type="Label" parent="Middle/ChoiceWindow/Choice3"]
+margin_left = 5.0
+margin_right = 48.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0.854902, 0.0352941, 0.0352941, 1 )
+custom_colors/font_outline_modulate = Color( 0.219608, 0.219608, 0.219608, 1 )
+custom_fonts/font = SubResource( 34 )
+text = "Name"
+valign = 2
+
+[node name="Description" type="Label" parent="Middle/ChoiceWindow/Choice3"]
+margin_left = 8.0
+margin_top = 18.0
+margin_right = 222.0
+margin_bottom = 42.0
+custom_colors/font_color = Color( 0.603922, 0.603922, 0.603922, 1 )
+custom_fonts/font = SubResource( 35 )
+text = "Release an explosion, dealing * points of damage and stacking any attack modifiers on top"
+autowrap = true
+
+[node name="Control2" type="Control" parent="Middle/ChoiceWindow/Choice3"]
+margin_top = -130.0
+margin_right = 40.0
+margin_bottom = -90.0
+
+[node name="Old Value" type="Label" parent="Middle/ChoiceWindow/Choice3/Control2"]
+margin_left = 8.0
+margin_top = 176.0
+margin_right = 106.0
+margin_bottom = 182.0
+custom_colors/font_color = Color( 0.603922, 0.603922, 0.603922, 1 )
+custom_fonts/font = SubResource( 35 )
+text = "20 Points"
+align = 2
+autowrap = true
+
+[node name="TextureRect" type="TextureRect" parent="Middle/ChoiceWindow/Choice3/Control2"]
+margin_left = 123.0
+margin_top = 170.0
+margin_right = 139.0
+margin_bottom = 186.0
+rect_rotation = 90.0
+texture = ExtResource( 13 )
+
+[node name="New Value" type="Label" parent="Middle/ChoiceWindow/Choice3/Control2"]
+margin_left = 126.0
+margin_top = 176.0
+margin_right = 224.0
+margin_bottom = 182.0
+custom_colors/font_color = Color( 0.603922, 0.603922, 0.603922, 1 )
+custom_fonts/font = SubResource( 35 )
+text = "20 Points"
+autowrap = true
+
+[node name="BottomRight" type="AspectRatioContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -55.0
+margin_top = -16.0
+
+[node name="UltimateIndicators" type="Control" parent="BottomRight"]
+unique_name_in_owner = true
+margin_left = 19.5
+margin_right = 35.5
+margin_bottom = 16.0
+
+[node name="FocusProgress" type="ProgressBar" parent="BottomRight/UltimateIndicators"]
+margin_left = 30.0
+margin_top = 14.0
+margin_right = 90.0
+margin_bottom = 16.0
+rect_rotation = 180.0
+size_flags_horizontal = 0
+custom_styles/fg = SubResource( 36 )
+custom_styles/bg = SubResource( 37 )
+max_value = 500.0
+percent_visible = false
+
+[node name="ActiveIndicator" type="TextureProgress" parent="BottomRight/UltimateIndicators"]
+margin_left = 24.0
+max_value = 1.0
+value = 1.0
+texture_under = ExtResource( 12 )
+texture_progress = ExtResource( 11 )
+fill_mode = 3
+tint_progress = Color( 0.235294, 0.235294, 0.235294, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Active = SubResource( 27 )
+anims/FadeIn = SubResource( 23 )
+anims/FadeOut = SubResource( 24 )
+anims/Inactive = SubResource( 28 )
+
+[node name="Timer" type="Timer" parent="AnimationPlayer"]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="choice_made" from="." to="." method="_on_HUD_choice_made"]
+[connection signal="tween_step" from="TopRight/PlayerStatsUI/CenterContainer/ShieldContainer/ShieldTween" to="." method="_on_ShieldTween_tween_step"]
+[connection signal="tween_step" from="TopRight/PlayerStatsUI/GridContainer/HealthContainer/HealthTween" to="." method="_on_HealthTween_tween_step"]
+[connection signal="tween_step" from="TopRight/PlayerStatsUI/GridContainer/StaminaContainer/StaminaTween" to="." method="_on_StaminaTween_tween_step"]
+[connection signal="tween_step" from="TopLeft/CurrencyUI/CurrencyTween" to="." method="_on_CurrencyTween_tween_step"]
+[connection signal="toggled" from="Middle/ChoiceWindow/Choice1" to="Middle/ChoiceWindow" method="_on_Choice1_toggled"]
+[connection signal="toggled" from="Middle/ChoiceWindow/Choice2" to="Middle/ChoiceWindow" method="_on_Choice2_toggled"]
+[connection signal="toggled" from="Middle/ChoiceWindow/Choice3" to="Middle/ChoiceWindow" method="_on_Choice3_toggled"]
+[connection signal="timeout" from="AnimationPlayer/Timer" to="." method="_on_Timer_timeout"]

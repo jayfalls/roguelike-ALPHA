@@ -1,0 +1,37 @@
+Player Properties:
+MAXHEALTH
+MAXSHIELD
+MAXSTAMINA
+stamina_wait #How long to wait before recovering stamina
+staminaRecovery_multiplier #Lower means longer recovery times
+dashCost #How much stamina a dash costs
+dash_cooldown_time #How long before player can dash again
+Invincibility Timeout
+Attack Speed
+Attack Damage
+Attack Cost #How much stamina an attack costs
+Focus Increase Amount #For Ultimate Attack
+Ultimate Attack Focus Cost
+Stagger Chance
+Stagger Duration
+
+Unique Abilities:
+Dash
+Attack
+Health Based(Regen, Thorns, Invincibility if health below point)
+Shield Based(Thorns, Invincibility if Shield Breaks, No Trap Damage, 50% Less Boss Damage)
+
+Unique Modifiers:
+Fire Damage
+Weakness
+Chain Damage
+Shield Damage
+Stagger
+
+Ultimate Attacks:
+Rush - Invincibility + 2x Damage + Constant Dash for 10 Seconds
+Rage - Explosion Dealing 4x Damage + Attack Modifier
+Tough Skin - Invincibility for 20 Seconds
+Star Power - Stagger Enemies in a Raidus for 12 Seconds(Does not apply to shields unless have shield damage)
+Youthfulness - Regen Half Health
+Soul Reaper - Steal Enemies in a Radius Health

@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/2 - swoosh - norm.wav-e70db2367551fe962daaf2c98ad0c35b.sample"
+
+[deps]
+
+source_file="res://Sound/SFX/Combat/Swooshes/2 - swoosh - norm.wav"
+dest_files=[ "res://.import/2 - swoosh - norm.wav-e70db2367551fe962daaf2c98ad0c35b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

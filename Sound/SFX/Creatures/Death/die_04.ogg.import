@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/die_04.ogg-d0969b7075a23964179a0c64c7119533.oggstr"
+
+[deps]
+
+source_file="res://Sound/SFX/Creatures/Death/die_04.ogg"
+dest_files=[ "res://.import/die_04.ogg-d0969b7075a23964179a0c64c7119533.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

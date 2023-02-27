@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Effects/Shaders/fog_shader.tres" type="Shader" id=1]
+[ext_resource path="res://Characters/Player/Player.tscn" type="PackedScene" id=2]
+
+[sub_resource type="OpenSimplexNoise" id=1]
+period = 39.2
+persistence = 0.516
+lacunarity = 0.68
+
+[sub_resource type="NoiseTexture" id=2]
+width = 1000
+height = 1000
+seamless = true
+noise = SubResource( 1 )
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 1 )
+shader_param/color = Vector3( 1, 1, 1 )
+shader_param/OCTAVES = 3
+
+[sub_resource type="OpenSimplexNoise" id=7]
+
+[sub_resource type="NoiseTexture" id=6]
+noise = SubResource( 7 )
+
+[node name="DungeonYSort" type="YSort" groups=["EnvironmentYSort"]]
+
+[node name="Background" type="Sprite" parent="."]
+modulate = Color( 0.0901961, 0.0901961, 0.0901961, 1 )
+light_mask = 0
+texture = SubResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 242, 143 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+zoom = Vector2( 0.7, 0.7 )
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+drag_margin_left = 0.1
+drag_margin_top = 0.05
+drag_margin_right = 0.1
+
+[node name="Fog" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.294118 )
+light_mask = 8
+material = SubResource( 4 )
+scale = Vector2( 50, 50 )
+z_index = 4
+texture = SubResource( 6 )
+
+[node name="Darkness" type="CanvasModulate" parent="."]
+light_mask = 7
+color = Color( 0, 0, 0, 1 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/impact.9.ogg-376b106b538c9eb2c2be86b7e5bc91cd.oggstr"
+
+[deps]
+
+source_file="res://Sound/SFX/Combat/Hits/impact.9.ogg"
+dest_files=[ "res://.import/impact.9.ogg-376b106b538c9eb2c2be86b7e5bc91cd.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

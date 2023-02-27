@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Characters/Weapons/MeleeWeapon/Slashes/SlashEffect.gd" type="Script" id=1]
+
+[node name="SlashEffect" type="Area2D"]
+position = Vector2( 3, -2 )
+script = ExtResource( 1 )
+
+[node name="TrailPoint0" type="Position2D" parent="."]
+position = Vector2( 0, -12 )
+
+[node name="TrailPoint1" type="Position2D" parent="."]
+position = Vector2( 0, -12 )

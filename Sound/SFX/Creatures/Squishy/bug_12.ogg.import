@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bug_12.ogg-5b9a51f4a1d29a5f9deff1db9492defc.oggstr"
+
+[deps]
+
+source_file="res://Sound/SFX/Creatures/Squishy/bug_12.ogg"
+dest_files=[ "res://.import/bug_12.ogg-5b9a51f4a1d29a5f9deff1db9492defc.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

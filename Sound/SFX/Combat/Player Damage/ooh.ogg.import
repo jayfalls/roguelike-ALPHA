@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ooh.ogg-1b1050f81b94461af34190c982e4c14d.oggstr"
+
+[deps]
+
+source_file="res://Sound/SFX/Combat/Player Damage/ooh.ogg"
+dest_files=[ "res://.import/ooh.ogg-1b1050f81b94461af34190c982e4c14d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

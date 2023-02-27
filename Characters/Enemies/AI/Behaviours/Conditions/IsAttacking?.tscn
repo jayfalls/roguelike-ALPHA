@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Characters/Enemies/AI/Behaviours/Conditions/IsAttacking?.gd" type="Script" id=1]
+
+[node name="IsAttacking\?" type="Node"]
+script = ExtResource( 1 )

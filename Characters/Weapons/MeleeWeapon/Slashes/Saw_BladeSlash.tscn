@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Characters/Weapons/MeleeWeapon/Slashes/SlashEffect.tscn" type="PackedScene" id=1]
+
+[node name="Saw_BladeSlash" instance=ExtResource( 1 )]
+trail_widths = [ 10, 8, 4 ]
+trail_colors = [ Color( 0.164706, 0.164706, 0.164706, 0.392157 ), Color( 0.843137, 0.843137, 0.843137, 0.843137 ), Color( 0.843137, 0.843137, 0.843137, 0.698039 ) ]
+trail_lengths = [ 10, 6, 4 ]
+
+[node name="TrailPoint0" parent="." index="0"]
+position = Vector2( 0, -10 )
+
+[node name="TrailPoint2" type="Position2D" parent="." index="2"]
+position = Vector2( 0, -6 )

@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Characters/Weapons/MeleeWeapon/Slashes/SlashEffect.tscn" type="PackedScene" id=1]
+
+[node name="KatanaSlash" instance=ExtResource( 1 )]
+trail_widths = [ 20, 8, 6, 5 ]
+trail_colors = [ Color( 0.164706, 0.164706, 0.164706, 0.392157 ), Color( 0.843137, 0.843137, 0.843137, 0.843137 ), Color( 0.843137, 0.843137, 0.843137, 0.698039 ), Color( 0.843137, 0.843137, 0.843137, 0.462745 ) ]
+trail_lengths = [ 10, 8, 4, 3 ]
+
+[node name="TrailPoint0" parent="." index="0"]
+position = Vector2( 0, -11 )
+
+[node name="TrailPoint1" parent="." index="1"]
+position = Vector2( 0, -16.5 )
+
+[node name="TrailPoint2" type="Position2D" parent="." index="2"]
+position = Vector2( 0, -11 )
+
+[node name="TrailPoint3" type="Position2D" parent="." index="3"]
+position = Vector2( 0, -6 )

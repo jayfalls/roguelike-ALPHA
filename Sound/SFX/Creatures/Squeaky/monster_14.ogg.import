@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/monster_14.ogg-5e14b2d5188a58b501f4ebdb5e05c3dd.oggstr"
+
+[deps]
+
+source_file="res://Sound/SFX/Creatures/Squeaky/monster_14.ogg"
+dest_files=[ "res://.import/monster_14.ogg-5e14b2d5188a58b501f4ebdb5e05c3dd.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
