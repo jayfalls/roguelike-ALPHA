@@ -551,6 +551,7 @@ tracks/6/keys = {
 }
 
 [node name="HUD" type="Control"]
+pause_mode = 2
 margin_left = 10.0
 margin_top = 5.0
 margin_right = 470.0
@@ -602,7 +603,6 @@ nine_patch_stretch = true
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 8, 7 )
 frames = SubResource( 10 )
-frame = 2
 playing = true
 
 [node name="ShieldTween" type="Tween" parent="TopRight/PlayerStatsUI/CenterContainer/ShieldContainer"]
@@ -651,7 +651,7 @@ nine_patch_stretch = true
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0, -1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="HealthTween" type="Tween" parent="TopRight/PlayerStatsUI/GridContainer/HealthContainer"]
@@ -694,6 +694,7 @@ nine_patch_stretch = true
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 8, 7 )
 frames = SubResource( 15 )
+frame = 2
 playing = true
 
 [node name="StaminaTween" type="Tween" parent="TopRight/PlayerStatsUI/GridContainer/StaminaContainer"]
@@ -776,6 +777,7 @@ rect_min_size = Vector2( 16, 12 )
 position = Vector2( 8, 4 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 20 )
+frame = 2
 playing = true
 
 [node name="CoinsValue" type="Label" parent="TopLeft/CurrencyUI/Coins"]
@@ -1018,6 +1020,40 @@ custom_fonts/font = SubResource( 35 )
 text = "20 Points"
 autowrap = true
 
+[node name="Pause" type="VBoxContainer" parent="Middle"]
+visible = false
+margin_top = 1.0
+margin_right = 260.0
+margin_bottom = 209.0
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Middle/Pause"]
+margin_top = 94.0
+margin_right = 260.0
+margin_bottom = 114.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_min_size = Vector2( 20, 20 )
+custom_constants/separation = 8
+alignment = 1
+
+[node name="RestartButton" type="Button" parent="Middle/Pause/HBoxContainer"]
+unique_name_in_owner = true
+margin_left = 66.0
+margin_right = 126.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 60, 20 )
+button_mask = 0
+text = "Restart"
+
+[node name="QuitButton" type="Button" parent="Middle/Pause/HBoxContainer"]
+unique_name_in_owner = true
+margin_left = 134.0
+margin_right = 194.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 60, 20 )
+text = "Quit"
+
 [node name="BottomRight" type="AspectRatioContainer" parent="."]
 anchor_left = 1.0
 anchor_top = 1.0
@@ -1071,4 +1107,6 @@ one_shot = true
 [connection signal="toggled" from="Middle/ChoiceWindow/Choice1" to="Middle/ChoiceWindow" method="_on_Choice1_toggled"]
 [connection signal="toggled" from="Middle/ChoiceWindow/Choice2" to="Middle/ChoiceWindow" method="_on_Choice2_toggled"]
 [connection signal="toggled" from="Middle/ChoiceWindow/Choice3" to="Middle/ChoiceWindow" method="_on_Choice3_toggled"]
+[connection signal="pressed" from="Middle/Pause/HBoxContainer/RestartButton" to="." method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="Middle/Pause/HBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="timeout" from="AnimationPlayer/Timer" to="." method="_on_Timer_timeout"]

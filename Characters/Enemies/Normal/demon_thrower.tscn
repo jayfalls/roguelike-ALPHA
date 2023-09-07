@@ -405,7 +405,7 @@ scale = Vector2( 0.75, 0.75 )
 [node name="Sprite" parent="." index="4"]
 position = Vector2( 0, -5 )
 texture = ExtResource( 1 )
-frame = 2
+frame = 4
 
 [node name="AimPivot" parent="." index="6"]
 LOOK_SMOOTHNESS = 0.3

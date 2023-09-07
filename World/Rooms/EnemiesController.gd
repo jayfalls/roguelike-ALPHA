@@ -80,7 +80,10 @@ func start_navigation():
 		enemy.room = room
 		enemy.chasing = chase
 		enemy.hurtbox.monitoring = true
-		enemy.connect("dead", self, "enemy_died")
+		if enemy.is_connected("dead", self, "enemy_died"):
+			pass
+		else:
+			enemy.connect("dead", self, "enemy_died")
 	new_wave = false
 
 func enemy_died() -> void:

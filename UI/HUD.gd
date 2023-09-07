@@ -1,7 +1,16 @@
 extends Control
 class_name HUD
 
+
+signal restart
 signal choice_made(choice_number)
+
+
+# VARIABLES
+## Children
+onready var pause_menu: VBoxContainer = $Middle/Pause
+onready var restart_button: Button = $"%RestartButton"
+onready var quit_button: Button = $"%QuitButton"
 
 onready var healthContainer = $"%HealthContainer"
 onready var healthRadial = healthContainer.get_child(0)
@@ -36,21 +45,28 @@ onready var animationPlayer_timer = $AnimationPlayer/Timer
 onready var lootManager = RunManager.lootManager
 onready var propertyManager = RunManager.propertyManager
 
+## States
 var selection_mode: bool = false
 var HUD_active: bool = false
+var paused: bool = false
 
+## Stats
 var staminaColor = Color(0.035294, 0.729412, 0.341176)
 var staminaBlockedColor = Color(0.913725, 0.913725, 0.913725)
 var gems: int
 var coins: int
 
+## References
 onready var player: Character = get_tree().get_nodes_in_group("Player").pop_front()
 var stats: Node setget set_stats
 var player_items: Node setget set_items
 
+
+# INITIALISATION
 func _ready():
 	yield(get_tree(), "idle_frame")
 	animationPlayer.play("Inactive")
+
 
 # STATS
 func set_stats(input) -> void:
@@ -188,17 +204,36 @@ func show_window() -> void:
 		
 		count += 1
 
+
 # HUD MANAGEMENT
 func _input(event):
-	if Input.is_action_just_pressed("ShowHUD"):
-		animationPlayer_timer.stop()
-		show_HUD()
-	if Input.is_action_just_released("ShowHUD"):
-		animationPlayer_timer.start()
 	if selection_mode == true:
 		if Input.is_action_just_pressed("ui_select"):
 			emit_signal("choice_made", choiceWindow.choice)
 			show_HUD()
+	elif Input.is_action_just_pressed("Pause"):
+		pause()
+	elif Input.is_action_just_pressed("ShowHUD"):
+		animationPlayer_timer.stop()
+		show_HUD()
+	elif Input.is_action_just_released("ShowHUD"):
+		animationPlayer_timer.start()
+
+
+func pause() -> void:
+	if paused and not player.dead:
+		paused = false
+		pause_menu.hide()
+		get_tree().paused = false
+		restart_button.release_focus()
+	else:
+		paused = true
+		pause_menu.show()
+		restart_button.grab_focus()
+		if player.dead:
+			get_tree().paused = false
+		else:
+			get_tree().paused = true
 
 func _on_Timer_timeout():
 	hide_HUD()
@@ -222,3 +257,13 @@ func _on_HUD_choice_made(choice_number):
 	propertyManager.update_property(lootManager.lootOptions_indexes[choice_number])
 	player.paused = false
 	selection_mode = false
+
+
+# Pause Menu
+func _on_RestartButton_pressed():
+	emit_signal("restart")
+	get_tree().paused = false
+	queue_free()
+
+func _on_QuitButton_pressed():
+	get_tree().quit()

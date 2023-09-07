@@ -42,8 +42,7 @@ position = Vector2( -121, 98 )
 position = Vector2( 48, 0 )
 
 [node name="DoorEntrance" parent="NavigationController/Doors" index="1"]
-visible = false
-position = Vector2( 160, 119 )
+position = Vector2( 496, 90 )
 
 [node name="Props" parent="NavigationController" index="10"]
 tile_data = PoolIntArray( 65531, 2, 0, 65532, 2, 0, 1, 536870915, 0, 4, 7, 0, 131069, 536870920, 2, 65540, 1, 0, 196603, 8, 2, 262136, 2, 0, 262137, 2, 0, 262138, 2, 0, 196615, 536870920, 0, 327672, 536870920, 1, 262148, 536870921, 1, 262151, 8, 3, 327685, 536870921, 0, 393223, 536870920, 65539, 524280, -1073741816, 65539, 458758, 536870920, 65539, 458759, 8, 65538 )
